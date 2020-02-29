@@ -8,8 +8,6 @@ const User = require('../models/User.model')
 
 
 authRoutes.post('/signup', (req, res, next) => {
-
-  console.log("------ PAYLOAD EN DESTINO -----", req.body)
   const username = req.body.username;
   const password = req.body.password;
 
@@ -61,8 +59,6 @@ authRoutes.post('/signup', (req, res, next) => {
         return;
       }
 
-      // Automatically log in user after sign up
-      // .login() here is actually predefined passport method
       req.login(aNewUser, (err) => {
 
         if (err) {
@@ -72,8 +68,6 @@ authRoutes.post('/signup', (req, res, next) => {
           return;
         }
 
-        // Send the user's information to the frontend
-        // We can use also: res.status(200).json(req.user);
         res.status(200).json(aNewUser);
       });
     });
@@ -91,13 +85,10 @@ authRoutes.post('/login', (req, res, next) => {
     }
 
     if (!theUser) {
-      // "failureDetails" contains the error messages
-      // from our logic in "LocalStrategy" { message: '...' }.
       res.status(401).json(failureDetails);
       return;
     }
 
-    // save user in session
     req.login(theUser, (err) => {
       if (err) {
         res.status(500).json({
@@ -105,8 +96,6 @@ authRoutes.post('/login', (req, res, next) => {
         });
         return;
       }
-
-      // We are now logged in (that's why we can also send req.user)
       res.status(200).json(theUser);
     });
   })(req, res, next);
@@ -115,7 +104,6 @@ authRoutes.post('/login', (req, res, next) => {
 
 
 authRoutes.post('/logout', (req, res, next) => {
-  // req.logout() is defined by passport
   req.logout();
   res.status(200).json({
     message: 'Log out success!'
@@ -124,7 +112,6 @@ authRoutes.post('/logout', (req, res, next) => {
 
 
 authRoutes.get('/loggedin', (req, res, next) => {
-  // req.isAuthenticated() is defined by passport
   if (req.isAuthenticated()) {
     res.status(200).json(req.user);
     return;

@@ -1,0 +1,19 @@
+header {
+    height: 94vh;
+    background-color: rgba(255, 255, 255, 1);
+    background-size: 100% auto;
+    background-image: url("../../../image/7b658101a5fe408594d579077d037a52.jpg");
+    background-blend-mode: luminosity;
+    transition: background-color 1s ease-out;
+}
+
+header p {
+    color: rgb(221, 151, 70);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: right;
+    margin: auto;
+    font-size: 1.3em;
+
+
+}
