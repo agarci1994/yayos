@@ -8,13 +8,13 @@ export default class Services {
         });
     }
 
-dietType = (diet) =>{
-    this.service
-    .post("/new", {
-      diet
-    })
-    .then(response => response.data);
-}
+    dietType = (diet) => {
+        this.service
+            .post("/new", {
+                diet
+            })
+            .then(response => response.data);
+    }
 
-searchMain = () => this.service.get('/main').then(response => response.data)
+    searchMain = () => this.service.get('/main').then(response => response.data)
 }

@@ -20,6 +20,7 @@ class Signup extends Component {
       phone:"", 
       family: "",
       diet: "",
+      recipe: "",
       role: []
     };
     this.services = new AuthServices();
@@ -49,7 +50,9 @@ class Signup extends Component {
           especiality: "",
           age: "",
           phone: "",
-          family: ""
+          family: "",
+          diet: "",
+          recipe: ""
         });
         this.props.setTheUser(theLoggedNewUser);
         this.props.history.push('/main')

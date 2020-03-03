@@ -16,10 +16,55 @@ router.post('/new', (req, res, next) => {
         .catch(err => console.log(err))
 })
 
-router.get('/main', (req, res, next) =>{
-    console.log(req.user)
-searchDiet.getRecipe("alcohol-free")
-    .then(recipe => User.findOneAndUpdate(req.user, {recipe: {day1: {breakfast: recipe.data.hits[0].recipe.label}}}))
-    .catch(err => console.log(err))
+router.get('/main', (req, res, next) => {
+    searchDiet.getRecipe(req.user.diet)
+        .then(recipe => User.findOneAndUpdate(req.user, {
+            recipe: {
+                day1: {
+                    breakfast: {
+                        name: recipe.data.hits[0].recipe.label,
+                        ingredients: recipe.data.hits[0].recipe.ingredientLines
+                    },
+                    lunch: {
+                        name: recipe.data.hits[0].recipe.label,
+                        ingredients: recipe.data.hits[0].recipe.ingredientLines
+                    },
+                    dinner: {
+                        name: recipe.data.hits[0].recipe.label,
+                        ingredients: recipe.data.hits[0].recipe.ingredientLines
+                    }
+                },
+                day2: {
+                    breakfast: {
+                        name: recipe.data.hits[1].recipe.label,
+                        ingredients: recipe.data.hits[1].recipe.ingredientLines
+                    },
+                    lunch: {
+                        name: recipe.data.hits[1].recipe.label,
+                        ingredients: recipe.data.hits[1].recipe.ingredientLines
+                    },
+                    dinner: {
+                        name: recipe.data.hits[1].recipe.label,
+                        ingredients: recipe.data.hits[1].recipe.ingredientLines
+                    }
+                },
+                day3: {
+                    breakfast: {
+                        name: recipe.data.hits[2].recipe.label,
+                        ingredients: recipe.data.hits[2].recipe.ingredientLines
+                    },
+                    lunch: {
+                        name: recipe.data.hits[2].recipe.label,
+                        ingredients: recipe.data.hits[2].recipe.ingredientLines
+                    },
+                    dinner: {
+                        name: recipe.data.hits[2].recipe.label,
+                        ingredients: recipe.data.hits[2].recipe.ingredientLines
+                    }
+                }
+            }
+        }))
+        .catch(err => console.log(err))
 })
+
 module.exports = router;

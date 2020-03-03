@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
 import CardFood from "../../../../cards/diet/food"
 import DietServices from "../../../../../services/dietType.services";
-import './diet.css'
+import './diet-module.css'
 
 
 const type = [{ type: "Equilibrada", description: "Valores de proteínas, grasas y carbohidratos equilibrados", typeAPI:"balanced"},
@@ -36,18 +36,21 @@ dietChange = (type) =>{
 }
 
 render() {
-this.dietServices.searchMain("vegan")
 return this.state.diet.length ? (
     <div>
       <Container>
-       <Row>
          <article className="titleDiet">
          <h2>Tu menu de hoy es:</h2>
+         <div className="button" onClick={()=> this.dietServices.searchMain()}>
+        Nueva Dieta
+         </div>
           </article>
+       <Row>
          <Col md={12}>
         <Table responsive="sm">
           <thead className="tr-orange">
               <tr>
+                <th>Dia</th>
                 <th>Desayuno</th>
                 <th>Almuerzo</th>
                 <th>Cena</th>
@@ -55,24 +58,54 @@ return this.state.diet.length ? (
           </thead>
           <tbody>
             <tr>
+              <td>Lunes</td>
               <td>{this.state.recipe.day1.breakfast}</td>
-              <td>pavo</td>
-              <td>queso</td>
+              <td>{this.state.recipe.day1.lunch}</td>
+              <td>{this.state.recipe.day1.dinner}</td>
+            </tr>
+            {/* <tr>
+              <td>Martes</td>
+              <td>{this.state.recipe.day2.breakfast}</td>
+              <td>{this.state.recipe.day2.lunch}</td>
+              <td>{this.state.recipe.day2.dinner}</td>
             </tr>
             <tr>
-              <td>donut</td>
-              <td>pavo</td>
-              <td>queso</td>
+              <td>Miercoles</td>
+              <td>{this.state.recipe.day3.breakfast}</td>
+              <td>{this.state.recipe.day3.lunch}</td>
+              <td>{this.state.recipe.day3.dinner}</td>
             </tr>
-            <tr>
-              <td>donut</td>
-              <td>pavo</td>
-              <td>queso</td>
+              <tr>
+              <td>Jueves</td>
+              <td>{this.state.recipe.day4.breakfast}</td>
+              <td>{this.state.recipe.day4.lunch}</td>
+              <td>{this.state.recipe.day4.dinner}</td>
             </tr>
+              <tr>
+              <td>Viernes</td>
+              <td>{this.state.recipe.day5.breakfast}</td>
+              <td>{this.state.recipe.day5.lunch}</td>
+              <td>{this.state.recipe.day5.dinner}</td>
+            </tr>
+              <tr>
+              <td>Sabado</td>
+              <td>{this.state.recipe.day6.breakfast}</td>
+              <td>{this.state.recipe.day6.lunch}</td>
+              <td>{this.state.recipe.day6.dinner}</td>
+            </tr>
+              <tr>
+              <td>Domingo</td>
+              <td>{this.state.recipe.day7.breakfast}</td>
+              <td>{this.state.recipe.day7.lunch}</td>
+              <td>{this.state.recipe.day7.dinner}</td>
+            </tr> */}
           </tbody>
         </Table>
           </Col>
         </Row>
+        <div className="imgDiet">
+        <img src = "../../../../../../images/cook.jpg" />
+      </div>
       </Container>
     </div>
 ) : (

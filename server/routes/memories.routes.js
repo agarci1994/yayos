@@ -1,18 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const Memories = require('../models/Memories.model')
+const User = require('../models/User.model')
 
 
-router.get('/', (req, res, next) => {
-    Memories.find()
-        .then(allMemories => res.json(allMemories))
-        .catch(err => console.log(err))
-})
 
-router.post('/new', (req, res, next) => {
-    Coaster.create(req.body)
-        .then(theCoaster => res.json(theCoaster))
-        .catch(err => console.log(err))
+router.post('/list', (req, res, next) => {
+User.findOneAndUpdate(req.user, {
+        memory: [req.body]
+    })
+    .then(() => console.log("Actualizado"))
+    .catch(err => console.log(err))
 })
 
 

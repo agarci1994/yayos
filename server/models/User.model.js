@@ -17,42 +17,105 @@ const userSchema = new Schema({
   diet: String,
   recipe: {
     day1: {
-      breakfast: String,
-      lunch: String,
-      dinner: String
+      breakfast: {
+        name: String,
+        ingredients: String
+      },
+      lunch: {
+        name: String,
+        ingredients: String
+      },
+      dinner: {
+        name: String,
+        ingredients: String
+      }
     },
     day2: {
-      breakfast: String,
-      lunch: String,
-      dinner: String
+      breakfast: {
+        name: String,
+        ingredients: String
+      },
+      lunch: {
+        name: String,
+        ingredients: String
+      },
+      dinner: {
+        name: String,
+        ingredients: String
+      }
     },
     day3: {
-      breakfast: String,
-      lunch: String,
-      dinner: String
+      breakfast: {
+        name: String,
+        ingredients: String
+      },
+      lunch: {
+        name: String,
+        ingredients: String
+      },
+      dinner: {
+        name: String,
+        ingredients: String
+      }
     },
     day4: {
-      breakfast: String,
-      lunch: String,
-      dinner: String
+      breakfast: {
+        name: String,
+        ingredients: String
+      },
+      lunch: {
+        name: String,
+        ingredients: String
+      },
+      dinner: {
+        name: String,
+        ingredients: String
+      }
     },
     day5: {
-      breakfast: String,
-      lunch: String,
-      dinner: String
+      breakfast: {
+        name: String,
+        ingredients: String
+      },
+      lunch: {
+        name: String,
+        ingredients: String
+      },
+      dinner: {
+        name: String,
+        ingredients: String
+      }
     },
     day6: {
-      breakfast: String,
-      lunch: String,
-      dinner: String
+      breakfast: {
+        name: String,
+        ingredients: String
+      },
+      lunch: {
+        name: String,
+        ingredients: String
+      },
+      dinner: {
+        name: String,
+        ingredients: String
+      }
     },
     day7: {
-      breakfast: String,
-      lunch: String,
-      dinner: String
+      breakfast: {
+        name: String,
+        ingredients: String
+      },
+      lunch: {
+        name: String,
+        ingredients: String
+      },
+      dinner: {
+        name: String,
+        ingredients: String
+      }
     },
-  }
-
+  },
+memory: [Object]
 }, {
   timestamps: {
     createdAt: 'created_at',
