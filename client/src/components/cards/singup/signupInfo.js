@@ -12,7 +12,7 @@ const CardRole = props => {
   function identifyRol(props){
   switch (props.role[0]) {
     case 'Yayo':
-     return <Form.Group>
+     return <><Form.Group>
         <Form.Label>Edad</Form.Label>
         <Form.Control
           type="number"
@@ -21,8 +21,18 @@ const CardRole = props => {
           onChange={props.handleChange}
         />
       </Form.Group>
+      <Form.Group>
+        <Form.Label>Familiar</Form.Label>
+        <Form.Control
+          type="String"
+          name="family"
+          value={props.family}
+          onChange={props.handleChange}
+        />
+      </Form.Group>
+      </>
     case "Family":
-      return <Form.Group>
+      return <><Form.Group>
         <Form.Label>Yayo/a</Form.Label>
         <Form.Control
           type="text"
@@ -31,6 +41,15 @@ const CardRole = props => {
           onChange={props.handleChange}
         />
       </Form.Group>
+      <Form.Group>
+        <Form.Label>Telefono</Form.Label>
+        <Form.Control
+          type="number"
+          name="phone"
+          value={props.phone}
+          onChange={props.handleChange}
+        />
+      </Form.Group></>
     case "Doctor":
       return <Form.Group>
         <Form.Label>Especialidad</Form.Label>

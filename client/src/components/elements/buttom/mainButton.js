@@ -10,7 +10,9 @@ let button = {
     skyblue: "paper",
     blue: "doctor",
     purple: "ejercite",
-    pink: "activity"
+    pink: "activity",
+    redWarming: "emergency",
+    yellowWarming: "family"
 }
 
 

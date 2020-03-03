@@ -8,6 +8,12 @@ import Index from "./components/pages/index/index"
 import Profile from './components/pages/profile/Profile'
 import Main from './components/pages/main/main'
 import AuthServices from './services/auth.services'
+import Warming from './components/pages/main/util/warming/warming'
+import Diet from './components/pages/main/util/diet/diet'
+import Drug from './components/pages/main/util/drug/drug'
+import Memory from './components/pages/main/util/memory/memory'
+
+
 
 class App extends Component {
  constructor() {
@@ -44,9 +50,12 @@ class App extends Component {
           <Route path="/signup" render={props => <Signup setTheUser={this.setTheUser} {...props}/>} />
           <Route path="/login" render={props => <Login setTheUser={this.setTheUser} {...props} />} />
           <Route path="/profile" render={() => this.state.loggedInUser ? <Profile loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
-          <Route path="/main" render={() => <Main loggedInUser={this.state.loggedInUser}/>}></Route>
+          <Route path="/main" render={() => this.state.loggedInUser ? <Main loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />}/>
+          <Route path="/warming" render={() => <Warming loggedInUser={this.state.loggedInUser} />}/>
+          <Route path="/diet" render={() => this.state.loggedInUser ? <Diet loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />}/>
+          <Route path="/pils" render={() => <Drug loggedInUser={this.state.loggedInUser} />}/>
+           <Route path="/memory" render={() => <Memory loggedInUser={this.state.loggedInUser} />} />
         </Switch>
-
         </main>
       </div>
     );

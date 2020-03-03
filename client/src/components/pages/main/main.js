@@ -6,21 +6,21 @@ import Col from "react-bootstrap/Col";
 import "./main-module.css";
 
 function chooseMain(props) {
-  switch (props.role[0]) {
+  switch (props.loggedInUser.role[0]) {
     case "Yayo":
       return (
         <>
           <Col xs={10} md={5} lg={3}>
-            <Button red className="button" name="Emergencias" url="/" />
+            <Button red className="button" name="Emergencias" url="/warming" />
           </Col>
           <Col xs={10} md={5} lg={3}>
-            <Button orange className="button" name="Dietas" url="/" />
+            <Button orange className="button" name="Dietas" url="/diet" />
           </Col>
           <Col xs={10} md={5} lg={3}>
-            <Button yellow className="button" name="Memoria" url="/" />
+            <Button yellow className="button" name="Memoria" url="/memory" />
           </Col>
           <Col xs={10} md={5} lg={3}>
-            <Button green className="button" name="Pastillas" url="/" />
+            <Button green className="button" name="Pastillas" url="/pils" />
           </Col>
           <Col xs={10} md={5} lg={3}>
             <Button skyblue className="button" name="Papeles" url="/" />
@@ -83,10 +83,11 @@ function chooseMain(props) {
 }
 
 const myIndex = props => {
+  
   return (
     <Container>
       <main className="mainButton">
-        <Row>{chooseMain(props.loggedInUser)}</Row>
+        <Row>{chooseMain(props)}</Row>
       </main>
     </Container>
   );

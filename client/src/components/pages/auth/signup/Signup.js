@@ -17,10 +17,15 @@ class Signup extends Component {
       age: "",
       yayo: "",
       especiality: "",
+      phone:"", 
+      family: "",
+      diet: "",
       role: []
     };
     this.services = new AuthServices();
   }
+
+  
   changeState = e => {
     this.setState({ role: [e.target.alt] });
   };
@@ -42,7 +47,9 @@ class Signup extends Component {
           city: "",
           yayo: "",
           especiality: "",
-          age: ""
+          age: "",
+          phone: "",
+          family: ""
         });
         this.props.setTheUser(theLoggedNewUser);
         this.props.history.push('/main')

@@ -7,9 +7,21 @@
     box-shadow: 15px 18px 21px -3px rgba(105, 105, 105, 0.34);
     display: flex;
     justify-content: center;
-
 }
-
+.emergency{
+    background-color: #FA6868;
+    font-size: 3em;
+    text-decoration: none;
+    color: rgb(49, 49, 49);
+    border-radius: 3%
+}
+.family {
+    background-color: #FFF96A;
+    font-size: 3em;
+    text-decoration: none;
+    color: rgb(49, 49, 49);
+    border-radius: 3%
+}
 .button p {
     text-decoration: none;
     font-size: 1.5em;

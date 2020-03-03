@@ -13,7 +13,8 @@ const userSchema = new Schema({
   especiality: String,
   phone: Number,
   affliction: [String],
-  yayo: String
+  yayo: String,
+  diet: String
 
 }, {
   timestamps: {
