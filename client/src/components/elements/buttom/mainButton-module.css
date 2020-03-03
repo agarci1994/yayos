@@ -1,0 +1,57 @@
+.button {
+    margin: 20px;
+    padding: 100px 120px 100px 120px;
+    border-radius: 15%;
+    -webkit-box-shadow: 15px 18px 21px -3px rgba(105, 105, 105, 0.34);
+    -moz-box-shadow: 15px 18px 21px -3px rgba(105, 105, 105, 0.34);
+    box-shadow: 15px 18px 21px -3px rgba(105, 105, 105, 0.34);
+    display: flex;
+    justify-content: center;
+
+}
+
+.button p {
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+ .warming p, .diet p, .memory p, .pills p{
+    color: #494949
+}
+
+ .paper p, .doctor p, .ejercite p, .activity p{
+    color: #f5f5f5
+}
+
+.warming {
+    background-color: #FF7C7C;
+}
+
+.diet {
+    background-color: #FABA0D;
+}
+
+.memory {
+    background-color: #FFF143;
+}
+
+.pills {
+    background-color: #BCFF50;
+}
+
+.paper {
+    background-color: rgb(41, 185, 238);
+}
+
+.doctor {
+    background-color: #4B67FF;
+}
+
+.ejercite {
+    background-color: #C136FF;
+}
+
+.activity {
+    background-color: #FF5DAE;
+}

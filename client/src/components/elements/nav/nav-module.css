@@ -1,0 +1,14 @@
+Nav div {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+}
+
+.navbar-light p, .navbar-brand p {
+    color: #707070;
+    font-size: 1.3em;
+    font-weight: 300;
+
+}
+

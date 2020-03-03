@@ -12,7 +12,8 @@ const userSchema = new Schema({
   role: ["Yayo", "Family", "Doctor", "Auxiliary"],
   especiality: String,
   phone: Number,
-  affliction: [String]
+  affliction: [String],
+  yayo: String
 
 }, {
   timestamps: {

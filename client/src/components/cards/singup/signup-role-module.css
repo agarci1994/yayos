@@ -1,0 +1,19 @@
+.roles {
+    padding: 5rem 3rem;
+    margin: 5rem 2rem 5rem;
+    background-color: #eaeaea;
+    border-radius: .3rem;
+    text-align: center;
+   -webkit-box-shadow: 15px 18px 21px -3px rgba(0, 0, 0, 0.34);
+   -moz-box-shadow: 15px 18px 21px -3px rgba(0, 0, 0, 0.34);
+   box-shadow: 15px 18px 21px -3px rgba(0, 0, 0, 0.34);
+}
+
+.botones {
+    margin-top: 100px
+}
+
+img {
+    width: 120%;
+    padding-right: 10px
+}
