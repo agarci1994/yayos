@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  
+
   username: String,
   password: String,
   name: String,
@@ -14,7 +14,44 @@ const userSchema = new Schema({
   phone: Number,
   affliction: [String],
   yayo: String,
-  diet: String
+  diet: String,
+  recipe: {
+    day1: {
+      breakfast: String,
+      lunch: String,
+      dinner: String
+    },
+    day2: {
+      breakfast: String,
+      lunch: String,
+      dinner: String
+    },
+    day3: {
+      breakfast: String,
+      lunch: String,
+      dinner: String
+    },
+    day4: {
+      breakfast: String,
+      lunch: String,
+      dinner: String
+    },
+    day5: {
+      breakfast: String,
+      lunch: String,
+      dinner: String
+    },
+    day6: {
+      breakfast: String,
+      lunch: String,
+      dinner: String
+    },
+    day7: {
+      breakfast: String,
+      lunch: String,
+      dinner: String
+    },
+  }
 
 }, {
   timestamps: {

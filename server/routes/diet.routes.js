@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User.model')
+const dietAPIHandler = require('../services/dietAPIHandler')
+const searchDiet = new dietAPIHandler()
 
 
 
@@ -14,12 +16,10 @@ router.post('/new', (req, res, next) => {
         .catch(err => console.log(err))
 })
 
-router.get('/sports', (req, res, next) => {
-    Sports.find()
-        .then(allSports => res.json(allSports))
-        .catch(err => console.log(err))
+router.get('/main', (req, res, next) =>{
+    console.log(req.user)
+searchDiet.getRecipe("alcohol-free")
+    .then(recipe => User.findOneAndUpdate(req.user, {recipe: {day1: {breakfast: recipe.data.hits[0].recipe.label}}}))
+    .catch(err => console.log(err))
 })
-
-
-
 module.exports = router;

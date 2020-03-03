@@ -14,4 +14,7 @@ dietType = (diet) =>{
       diet
     })
     .then(response => response.data);
-}}
+}
+
+searchMain = () => this.service.get('/main').then(response => response.data)
+}

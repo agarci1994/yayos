@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
 import CardFood from "../../../../cards/diet/food"
-import DietServices from "../../../../../services/diet.services";
+import DietServices from "../../../../../services/dietType.services";
 import './diet.css'
 
 
@@ -23,17 +23,20 @@ const type = [{ type: "Equilibrada", description: "Valores de proteínas, grasas
 class Diet extends Component {
   constructor(props) {
     super(props);
-    this.state = { diet: props.loggedInUser.diet };
-    this.services = new DietServices();
+    this.state = { 
+      recipe: props.loggedInUser.recipe,
+      diet: props.loggedInUser.diet };
+    this.dietServices = new DietServices();
   }
 
 
 dietChange = (type) =>{
   this.setState({ diet: type });
-  this.services.dietType(type)
+  this.dietServices.dietType(type)
 }
 
 render() {
+this.dietServices.searchMain("vegan")
 return this.state.diet.length ? (
     <div>
       <Container>
@@ -52,7 +55,7 @@ return this.state.diet.length ? (
           </thead>
           <tbody>
             <tr>
-              <td>donut</td>
+              <td>{this.state.recipe.day1.breakfast}</td>
               <td>pavo</td>
               <td>queso</td>
             </tr>
