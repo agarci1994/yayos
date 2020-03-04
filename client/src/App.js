@@ -54,7 +54,7 @@ class App extends Component {
           <Route path="/warming" render={() => <Warming loggedInUser={this.state.loggedInUser} />}/>
           <Route path="/diet" render={() => this.state.loggedInUser ? <Diet loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />}/>
           <Route path="/pils" render={() => <Drug loggedInUser={this.state.loggedInUser} />}/>
-          <Route path="/memory" render={() => <Memory loggedInUser={this.state.loggedInUser} />} />
+          <Route path="/memory" render={() => this.state.loggedInUser ? <Memory loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />}/>
         </Switch>
         </main>
       </div>

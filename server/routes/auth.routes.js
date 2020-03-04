@@ -18,7 +18,10 @@ authRoutes.post('/signup', (req, res, next) => {
     especiality,
     phone,
     affliction,
-    yayo
+    yayo,
+    diet,
+    recipe,
+    memory
   } = req.body
 
   if (!username || !password) {
@@ -67,7 +70,10 @@ authRoutes.post('/signup', (req, res, next) => {
       especiality,
       phone,
       affliction,
-      yayo
+      yayo,
+      diet,
+      recipe,
+      memory
     });
 
     aNewUser.save(err => {

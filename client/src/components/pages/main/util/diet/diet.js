@@ -5,7 +5,10 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
 import CardFood from "../../../../cards/diet/food"
+import Recipes from "../../../../cards/diet/recipes"
 import DietServices from "../../../../../services/dietType.services";
+import Popover from 'react-bootstrap/Popover'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import './diet-module.css'
 
 
@@ -30,12 +33,34 @@ class Diet extends Component {
   }
 
 
-dietChange = (type) =>{
-  this.setState({ diet: type });
+  dietChange = (type) =>{
+
+    this.setState({ diet: type });
   this.dietServices.dietType(type)
 }
 
+takeRecipes = () => {
+  const popover = (
+  <Popover id="popover-basic">
+    <Popover.Title as="h3">Popover right</Popover.Title>
+    <Popover.Content>
+      And here's some <strong>amazing</strong> content. It's very engaging.
+      right?
+    </Popover.Content>
+  </Popover>
+);
+
+const Example = () => (
+  <OverlayTrigger trigger="click" placement="right" overlay={popover}>
+    <Button variant="success">Click me to see</Button>
+  </OverlayTrigger>
+);
+ return this.state.recipe.length != 1 && this.state.recipe.map((elm, idx) =><Recipes day={idx} breakfast={elm[idx].breakfast.name} lunch={elm[idx].lunch.name} dinner={elm[idx].dinner.name} />)}
+
+
 render() {
+  console.log(this.state.recipe)
+// this.dietServices.searchMain()
 return this.state.diet.length ? (
     <div>
       <Container>
@@ -57,48 +82,7 @@ return this.state.diet.length ? (
               </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Lunes</td>
-              <td>{this.state.recipe.day1.breakfast}</td>
-              <td>{this.state.recipe.day1.lunch}</td>
-              <td>{this.state.recipe.day1.dinner}</td>
-            </tr>
-            {/* <tr>
-              <td>Martes</td>
-              <td>{this.state.recipe.day2.breakfast}</td>
-              <td>{this.state.recipe.day2.lunch}</td>
-              <td>{this.state.recipe.day2.dinner}</td>
-            </tr>
-            <tr>
-              <td>Miercoles</td>
-              <td>{this.state.recipe.day3.breakfast}</td>
-              <td>{this.state.recipe.day3.lunch}</td>
-              <td>{this.state.recipe.day3.dinner}</td>
-            </tr>
-              <tr>
-              <td>Jueves</td>
-              <td>{this.state.recipe.day4.breakfast}</td>
-              <td>{this.state.recipe.day4.lunch}</td>
-              <td>{this.state.recipe.day4.dinner}</td>
-            </tr>
-              <tr>
-              <td>Viernes</td>
-              <td>{this.state.recipe.day5.breakfast}</td>
-              <td>{this.state.recipe.day5.lunch}</td>
-              <td>{this.state.recipe.day5.dinner}</td>
-            </tr>
-              <tr>
-              <td>Sabado</td>
-              <td>{this.state.recipe.day6.breakfast}</td>
-              <td>{this.state.recipe.day6.lunch}</td>
-              <td>{this.state.recipe.day6.dinner}</td>
-            </tr>
-              <tr>
-              <td>Domingo</td>
-              <td>{this.state.recipe.day7.breakfast}</td>
-              <td>{this.state.recipe.day7.lunch}</td>
-              <td>{this.state.recipe.day7.dinner}</td>
-            </tr> */}
+       {this.takeRecipes()}
           </tbody>
         </Table>
           </Col>

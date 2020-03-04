@@ -17,7 +17,10 @@ export default class Services {
     age,
     role,
     yayo,
-    especiality
+    especiality,
+    diet,
+    recipe,
+    memory
   }) =>
     this.service
       .post("/signup", {
@@ -29,7 +32,10 @@ export default class Services {
         age,
         role,
         yayo,
-        especiality
+        especiality,
+        diet,
+        recipe,
+        memory
       })
       .then(response => response.data);
 

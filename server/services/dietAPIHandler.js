@@ -7,7 +7,7 @@ class dietAPIHandler {
         })
     }
     getRecipe(diet) {
-        return this.axiosApp.get(`search?q=&app_id=${process.env.idEdam}&app_key=${process.env.keyEdam}&health=${diet}`)
+        return this.axiosApp.get(`search?q=&app_id=${process.env.idEdam}&app_key=${process.env.keyEdam}&diet=${diet}`)
     }
 }
 

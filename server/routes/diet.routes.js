@@ -7,63 +7,48 @@ const searchDiet = new dietAPIHandler()
 
 
 router.post('/new', (req, res, next) => {
-    console.log(req.user)
+    console.log(req.user, req.user.username)
     console.log(req.body.diet)
-    User.findOneAndUpdate(req.user, {
+    User.findByIdAndUpdate(req.user._id, {
             diet: req.body.diet
         })
-        .then(() => console.log("Actualizado"))
+        .then(x => console.log("Actualizado", x))
         .catch(err => console.log(err))
 })
 
 router.get('/main', (req, res, next) => {
     searchDiet.getRecipe(req.user.diet)
-        .then(recipe => User.findOneAndUpdate(req.user, {
-            recipe: {
-                day1: {
-                    breakfast: {
-                        name: recipe.data.hits[0].recipe.label,
-                        ingredients: recipe.data.hits[0].recipe.ingredientLines
-                    },
-                    lunch: {
-                        name: recipe.data.hits[0].recipe.label,
-                        ingredients: recipe.data.hits[0].recipe.ingredientLines
-                    },
-                    dinner: {
-                        name: recipe.data.hits[0].recipe.label,
-                        ingredients: recipe.data.hits[0].recipe.ingredientLines
-                    }
-                },
-                day2: {
-                    breakfast: {
-                        name: recipe.data.hits[1].recipe.label,
-                        ingredients: recipe.data.hits[1].recipe.ingredientLines
-                    },
-                    lunch: {
-                        name: recipe.data.hits[1].recipe.label,
-                        ingredients: recipe.data.hits[1].recipe.ingredientLines
-                    },
-                    dinner: {
-                        name: recipe.data.hits[1].recipe.label,
-                        ingredients: recipe.data.hits[1].recipe.ingredientLines
-                    }
-                },
-                day3: {
-                    breakfast: {
-                        name: recipe.data.hits[2].recipe.label,
-                        ingredients: recipe.data.hits[2].recipe.ingredientLines
-                    },
-                    lunch: {
-                        name: recipe.data.hits[2].recipe.label,
-                        ingredients: recipe.data.hits[2].recipe.ingredientLines
-                    },
-                    dinner: {
-                        name: recipe.data.hits[2].recipe.label,
-                        ingredients: recipe.data.hits[2].recipe.ingredientLines
+        .then(recipe => {
+            let recipes = []
+            for (let i = 0; i < 7; i++) {
+                let breakfast = Math.floor(Math.random() * recipe.data.hits.length)
+                let lunch = Math.floor(Math.random() * recipe.data.hits.length)
+                let dinner = Math.floor(Math.random() * recipe.data.hits.length)
+                let day = {
+                    [i]: {
+                        breakfast: {
+                            name: recipe.data.hits[breakfast].recipe.label,
+                            ingredients: recipe.data.hits[breakfast].recipe.ingredientLines
+                        },
+                        lunch: {
+                            name: recipe.data.hits[lunch].recipe.label,
+                            ingredients: recipe.data.hits[lunch].recipe.ingredientLines
+                        },
+                        dinner: {
+                            name: recipe.data.hits[dinner].recipe.label,
+                            ingredients: recipe.data.hits[dinner].recipe.ingredientLines
+                        }
                     }
                 }
+                recipes.push(day)
             }
-        }))
+            console.log(recipes)
+            return User.findByIdAndUpdate(req.user._id, {
+                recipe: recipes
+            })
+
+        })
+        .then(x => console.log(x))
         .catch(err => console.log(err))
 })
 

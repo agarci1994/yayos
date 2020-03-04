@@ -5,7 +5,16 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import MemoryServices from "../../../../../services/memory.services";
+import styled from 'styled-components'
 import "./memory-module.css";
+
+const Text = styled.text`
+color: rgb(49, 49, 49);
+font-size:1.1em;
+
+`
+
+
 
 class Memory extends Component {
   constructor(props) {
@@ -43,37 +52,39 @@ class Memory extends Component {
   render() {
     return (
       <Container className="memoryForm">
-        <Row className="align-items-end">
-          <Col md={5}>
-            <Form className="form-memory" onSubmit={this.handleSubmit}>
-              <Form.Group controlId="formBasicEmail">
-                <h3>¿Qué tienes que hacer?</h3>
-                <Form.Control
-                  type="String"
-                  name="description"
-                  value={this.state.description}
-                  onChange={this.handleChange}
-                />
-                <h3>¿Cuándo?</h3>
-                <Form.Control
-                  type="Date"
-                  name="date"
-                  value={this.state.date}
-                  onChange={this.handleChange}
-                />
-              </Form.Group>
-              <div className="d-flex">
-                <Button className="ml-auto" variant="primary" type="submit">
-                  Submit
-                </Button>
-              </div>
-            </Form>
-            <img src="../../../../../../images/muñeco-pensando-png-1.png" />
-          </Col>
-          <Col md={4}>
-            <li>
-              <ul>{this.state.memory[0].description}</ul>
-            </li>
+        <Row>
+          <Col md={12}>
+            <Row className="justify-content-between">
+              <Col md={5}>
+                <Form className="form-memory" onSubmit={this.handleSubmit}>
+                  <Form.Group controlId="formBasicEmail">
+                    <h3>¿Qué tienes que hacer?</h3>
+                    <Form.Control
+                      type="String"
+                      name="description"
+                      value={this.state.description}
+                      onChange={this.handleChange}
+                    />
+                    <h3>¿Cuándo?</h3>
+                    <Form.Control
+                      type="Date"
+                      name="date"
+                      value={this.state.date}
+                      onChange={this.handleChange}
+                    />
+                  </Form.Group>
+                  <div className="d-flex">
+                    <Button className="ml-auto" variant="primary" type="submit">
+                      Submit
+                    </Button>
+                  </div>
+                </Form>
+                <img src="../../../../../../images/muñeco-pensando-png-1.png" />
+              </Col>
+              <Col md={5}>
+                 {this.state.memory.map(elm => <Text>- {elm.description} | {elm.date}<br/></Text>)}
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Container>
