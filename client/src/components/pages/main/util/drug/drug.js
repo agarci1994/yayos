@@ -5,45 +5,48 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
+import CardDrug from "../../../../cards/drug/cardDrug"
 import "./drug-module.css";
 
 const pils = {
-  monday: [
+  monday: 
     {
       morning: [{ name: "Corazón" }, { name: "Tiroides" }],
       afternoom: [{ name: "Riñon" }, { name: "Tension" }],
       night: [{ name: "Riñon" }, { name: "Tension" }]
     }
-  ],
-  tuesday: [
+  ,
+  tuesday: 
     {
       morning: [{ name: "Riñon" }, { name: "Tension" }],
       afternoom: [{ name: "Riñon" }, { name: "Tension" }],
       night: [{ name: "Riñon" }, { name: "Tension" }]
     }
-  ],
-  wednesday: [
+  ,
+  wednesday: 
     {
       morning: [{ name: "Tension" }, { name: "Ansiedad" }],
       afternoom: [{ name: "Riñon" }, { name: "Tension" }],
       night: [{ name: "Riñon" }, { name: "Tension" }]
     }
-  ],
-  thursday: [
+  ,
+  thuersday: 
     {
       morning: [{ name: "Tiroides" }, { name: "Tiroides" }],
       afternoom: [{ name: "Riñon" }, { name: "Tension" }],
       night: [{ name: "Riñon" }, { name: "Tension" }]
     }
-  ],
-  friday: [
+  ,
+  friday: 
     {
       morning: [{ name: "Ansiedad" }, { name: "Tiroides" }],
       afternoom: [{ name: "Riñon" }, { name: "Tension" }],
       night: [{ name: "Riñon" }, { name: "Tension" }]
     }
-  ]
+  
 };
+
+let days = Object.keys(pils)
 
 const Drug = props => {
   return (
@@ -54,66 +57,49 @@ const Drug = props => {
             <Col sm={2}>
               <Nav variant="pills" className="flex-column">
                 <Nav.Item>
-                  <Nav.Link eventKey="first">
+                  <Nav.Link eventKey="monday">
                     <p>Lunes</p>
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="second">
+                  <Nav.Link eventKey="tuesday">
                     <p>Martes</p>
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="third">
+                  <Nav.Link eventKey="wednesday">
                     <p>Miercoles</p>
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="fourth">
+                  <Nav.Link eventKey="thuersday">
                     <p>Jueves</p>
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="fifth">
+                  <Nav.Link eventKey="friday">
                     <p>Viernes</p>
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="sixth">
+                  <Nav.Link eventKey="saturday">
                     <p>Sábado</p>
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="seventh">
+                  <Nav.Link eventKey="sunday">
                     <p>Domingo</p>
                   </Nav.Link>
                 </Nav.Item>
               </Nav>
             </Col>
             <Col sm={9}>
-              <Tab.Content>
-                <Tab.Pane eventKey="first">
-                  <h1>Holaa</h1>
+              {days.map(elm => <Tab.Content>
+                <Tab.Pane eventKey={elm}>
+                  <CardDrug morning={pils[elm].morning} afternoom={pils[elm].afternoom} night={pils[elm].night}/>
                 </Tab.Pane>
-                <Tab.Pane eventKey="second">
-                  <h1>adios</h1>
-                </Tab.Pane>
-                <Tab.Pane eventKey="third">
-                  <h1>javie</h1>
-                </Tab.Pane>
-                <Tab.Pane eventKey="fourth">
-                  <h1>jose</h1>
-                </Tab.Pane>
-                <Tab.Pane eventKey="fifth">
-                  <h1>norma</h1>
-                </Tab.Pane>
-                <Tab.Pane eventKey="sixth">
-                  <h1>fefe</h1>
-                </Tab.Pane>
-                <Tab.Pane eventKey="seventh">
-                  <h1>fasfa</h1>
-                </Tab.Pane>
-              </Tab.Content>
+              </Tab.Content>)}
+              
             </Col>
           </Row>
         </Tab.Container>
