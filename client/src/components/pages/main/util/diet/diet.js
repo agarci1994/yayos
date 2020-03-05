@@ -2,13 +2,10 @@ import React, {Component} from "react"
 import DietServices from "../../../../../services/dietType.services"
 import CardFood from "../../../../cards/diet/food"
 import Recipes from "../../../../cards/diet/recipes"
-import Button from "../../../../elements/buttom/mainButton"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Table from "react-bootstrap/Table"
-import Popover from 'react-bootstrap/Popover'
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import './diet-module.css'
 
 
@@ -40,27 +37,10 @@ class Diet extends Component {
 }
 
 takeRecipes = () => {
-  const popover = (
-  <Popover id="popover-basic">
-    <Popover.Title as="h3">Popover right</Popover.Title>
-    <Popover.Content>
-      And here's some <strong>amazing</strong> content. It's very engaging.
-      right?
-    </Popover.Content>
-  </Popover>
-);
-
-const Example = () => (
-  <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-    <Button variant="success">Click me to see</Button>
-  </OverlayTrigger>
-);
- return this.state.recipe.length !== 1 && this.state.recipe.map((elm, idx) => <Recipes day={idx} breakfast={elm[idx].breakfast.name} lunch={elm[idx].lunch.name} dinner={elm[idx].dinner.name} />)}
+ return this.state.recipe.length !== 1 && this.state.recipe.map((elm, idx) => <Recipes  key={idx} day={idx} breakfast={elm[idx].breakfast.name} lunch={elm[idx].lunch.name} dinner={elm[idx].dinner.name} />)}
 
 
 render() {
-  console.log(this.state.recipe)
-// this.dietServices.searchMain()
 return this.state.diet.length ? (
     <div>
       <Container>

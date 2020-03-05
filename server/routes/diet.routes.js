@@ -7,8 +7,6 @@ const searchDiet = new dietAPIHandler()
 
 
 router.post('/new', (req, res, next) => {
-    console.log(req.user, req.user.username)
-    console.log(req.body.diet)
     User.findByIdAndUpdate(req.user._id, {
             diet: req.body.diet
         })

@@ -6,6 +6,7 @@ const drugSchema = new Schema({
     drugs: [{
         name: String,
         quantity: Number,
+        quantityDay: Number, 
         day: [String],
         hours: [String],
         description: String,
@@ -13,7 +14,6 @@ const drugSchema = new Schema({
         form: ["little-circle", "big-circle", "liquid", "pill"],
         price: Number,
         yayo: { type: Schema.ObjectId, ref: User }
-
     }]
 }, {
     timestamps: {

@@ -81,7 +81,7 @@ class Memory extends Component {
                 <img src="../../../../../../images/muñeco-pensando-png-1.png" alt="thinking" />
               </Col>
               <Col md={5}>
-                 {this.state.memory.map(elm => <Text>- {elm.description} | {elm.date}<br/></Text>)}
+                 {this.state.memory.map((elm, idx) => <Text key={idx}>- {elm.description} | {elm.date}<br/></Text>)}
               </Col>
             </Row>
           </Col>

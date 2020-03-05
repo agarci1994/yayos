@@ -10,17 +10,17 @@ const CardDrug = props => {
       <Col sm={12}>
         <Nav variant="pills" className="flex-row justify-content-around">
           <Nav.Item>
-            <Nav.Link eventKey="morning">
+            <Nav.Link eventKey="morning" className="nav-green">
               <p>Mañana</p>
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link eventKey="afternoom">
+            <Nav.Link eventKey="afternoom" className="nav-green">
               <p>Tarde</p>
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link eventKey="night">
+            <Nav.Link eventKey="night" className="nav-green">
               <p>Noche</p>
             </Nav.Link>
           </Nav.Item>
@@ -29,18 +29,18 @@ const CardDrug = props => {
       <Col sm={12}>
         <Tab.Content>
           <Tab.Pane eventKey="morning">
-            {props.morning.map(elm => (
-              <h1>{elm.name}</h1>
+            {props.morning.map((elm, idx) => (
+              <h1 key={idx}>{elm.name}</h1>
             ))}
           </Tab.Pane>
           <Tab.Pane eventKey="afternoom">
-            {props.afternoom.map(elm => (
-              <h1>{elm.name}</h1>
+            {props.afternoom.map((elm, idx) => (
+              <h1 key={idx}>{elm.name}</h1>
             ))}
           </Tab.Pane>
           <Tab.Pane eventKey="night">
-            {props.night.map(elm => (
-              <h1>{elm.name}</h1>
+            {props.night.map((elm, idx) => (
+              <h1 key={idx}>{elm.name}</h1>
             ))}
           </Tab.Pane>
         </Tab.Content>
