@@ -32,7 +32,7 @@ function chooseMain(props) {
             <Button purple className="button" name="Ejercicios" url="/" />
           </Col>
           <Col xs={10} md={5} lg={3}>
-            <Button pink className="button" name="Actividades" url="/" />
+            <Button pink className="button" name="Actividades" url="/event" />
           </Col>
         </>
       );
