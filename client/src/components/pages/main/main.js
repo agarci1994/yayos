@@ -1,9 +1,9 @@
-import React from "react";
-import Button from "../../elements/buttom/mainButton";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import "./main-module.css";
+import React from "react"
+import Button from "../../elements/buttom/mainButton"
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
+import "./main-module.css"
 
 function chooseMain(props) {
   switch (props.loggedInUser.role[0]) {
@@ -78,7 +78,7 @@ function chooseMain(props) {
         </>
       );
     default:
-      return <h1>registrate</h1>;
+      return <h1>registrate</h1>
   }
 }
 
@@ -90,7 +90,7 @@ const myIndex = props => {
         <Row>{chooseMain(props)}</Row>
       </main>
     </Container>
-  );
-};
+  )
+}
 
-export default myIndex;
+export default myIndex

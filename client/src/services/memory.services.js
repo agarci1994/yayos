@@ -16,6 +16,7 @@ export default class Services {
          description,
          date
      })
-     .then(response => response.data);
+     .then(response => response.data)
+     .catch(err => console.log(err))
 
 }

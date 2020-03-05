@@ -37,7 +37,8 @@ export default class Services {
         recipe,
         memory
       })
-      .then(response => response.data);
+      .then(response => response.data)
+      .catch(err => console.log(err))
 
   login = ({ username, password }) =>
     this.service
@@ -45,9 +46,11 @@ export default class Services {
         username,
         password
       })
-      .then(response => response.data);
+      .then(response => response.data)
+      .catch(err => console.log(err))
 
-  logout = () => this.service.post("/logout").then(response => response.data);
+  logout = () => this.service.post("/logout").then(response => response.data).catch(err=> console.log(err))
+
   loggedin = () =>
-    this.service.get("/loggedin").then(response => response.data);
+    this.service.get("/loggedin").then(response => response.data).catch(err => console.log(err))
 }

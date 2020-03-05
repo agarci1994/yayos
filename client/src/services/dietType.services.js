@@ -13,8 +13,9 @@ export default class Services {
             .post("/new", {
                 diet
             })
-            .then(response => response.data);
+            .then(response => response.data)
+            .catch(err => console.log(err))
     }
 
-    searchMain = () => this.service.get('/main').then(response => response.data)
+    searchMain = () => this.service.get('/main').then(response => response.data).catch(err => console.log(err))
 }

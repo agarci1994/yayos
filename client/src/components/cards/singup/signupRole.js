@@ -1,8 +1,8 @@
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import "./signup-role-module.css";
+import React from "react"
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
+import "./signup-role-module.css"
 
 const CardRole = props => {
   return (
@@ -45,7 +45,7 @@ const CardRole = props => {
         </Row>
       </Container>
     </div>
-  );
-};
+  )
+}
 
-export default CardRole;
+export default CardRole

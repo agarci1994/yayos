@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
+import AuthServices from './services/auth.services'
 import Nav from "./components/elements/nav/Nav";
 import Signup from './components/pages/auth/signup/Signup'
 import Login from './components/pages/auth/login/Login'
 import Index from "./components/pages/index/index"
 import Profile from './components/pages/profile/Profile'
 import Main from './components/pages/main/main'
-import AuthServices from './services/auth.services'
 import Warming from './components/pages/main/util/warming/warming'
 import Diet from './components/pages/main/util/diet/diet'
 import Drug from './components/pages/main/util/drug/drug'
 import Memory from './components/pages/main/util/memory/memory'
+import "./App.css";
 
 
 

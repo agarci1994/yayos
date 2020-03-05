@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 
-import CardRole from "../../../cards/singup/signupRole";
-import SignUpInfo from "../../../cards/singup/signupInfo";
-import AuthServices from "../../../../services/auth.services";
-import "./signup-module.css";
+import CardRole from "../../../cards/singup/signupRole"
+import SignUpInfo from "../../../cards/singup/signupInfo"
+import AuthServices from "../../../../services/auth.services"
+import "./signup-module.css"
 
 class Signup extends Component {
   constructor() {
@@ -17,23 +17,23 @@ class Signup extends Component {
       age: "",
       yayo: "",
       especiality: "",
-      phone:"", 
+      phone:"",
       family: "",
       diet: "",
       recipe: "",
       role: []
     };
-    this.services = new AuthServices();
+    this.services = new AuthServices()
   }
 
   
   changeState = e => {
-    this.setState({ role: [e.target.alt] });
+    this.setState({ role: [e.target.alt] })
   };
 
   handleChange = e => {
-    let { name, value } = e.target;
-    this.setState({ [name]: value });
+    let { name, value } = e.target
+    this.setState({ [name]: value })
   };
 
   postUser = () => {
@@ -54,16 +54,16 @@ class Signup extends Component {
           diet: "",
           recipe: ""
         });
-        this.props.setTheUser(theLoggedNewUser);
+        this.props.setTheUser(theLoggedNewUser)
         this.props.history.push('/main')
 
       })
-      .catch(err => console.log({ err }));
+      .catch(err => console.log({ err }))
   };
 
   handleSubmit = e => {
-    e.preventDefault();
-    this.postUser();
+    e.preventDefault()
+    this.postUser()
   };
 
   render() {
@@ -79,4 +79,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default Signup

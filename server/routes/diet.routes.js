@@ -42,7 +42,6 @@ router.get('/main', (req, res, next) => {
                 }
                 recipes.push(day)
             }
-            console.log(recipes)
             return User.findByIdAndUpdate(req.user._id, {
                 recipe: recipes
             })

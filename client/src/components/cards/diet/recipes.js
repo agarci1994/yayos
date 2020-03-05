@@ -1,7 +1,4 @@
-import React from "react";
-import Card from 'react-bootstrap/Card'
-import Col from "react-bootstrap/Col";
-import Table from "react-bootstrap/Table";
+import React from "react"
 import './food.css'
 
 const Recipes = props => {
@@ -28,6 +25,9 @@ switch (props.day){
     case 6:
     day = "Domingo"
     break;
+    default:
+    day = "Extra"
+    break;
 }
 return (
         <tr>
@@ -39,4 +39,4 @@ return (
 )
 };
 
-export default Recipes;
+export default Recipes

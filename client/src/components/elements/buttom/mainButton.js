@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"
+import { Link } from "react-router-dom"
 import "./mainButton-module.css"
-import { Link } from "react-router-dom";
 
 let button = {
     red: "warming",
@@ -30,7 +30,7 @@ const Button = props => {
 
     classProps ? (className = classProps) : (className = props.className)
 
-console.log(className)
+    
     return (
             <Link to={props.url}>
         <div className={`button ${className}`}>

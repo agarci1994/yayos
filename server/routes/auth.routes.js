@@ -1,8 +1,8 @@
-const express = require('express');
-const authRoutes = express.Router();
+const express = require('express')
+const authRoutes = express.Router()
 
-const passport = require('passport');
-const bcrypt = require('bcryptjs');
+const passport = require('passport')
+const bcrypt = require('bcryptjs')
 
 const User = require('../models/User.model')
 
@@ -27,15 +27,15 @@ authRoutes.post('/signup', (req, res, next) => {
   if (!username || !password) {
     res.status(400).json({
       message: 'Provide username and password'
-    });
-    return;
+    })
+    return
   }
 
   if (password.length < 7) {
     res.status(400).json({
       message: 'Please make your password at least 8 characters long for security purposes.'
-    });
-    return;
+    })
+    return
   }
 
   User.findOne({
@@ -45,15 +45,15 @@ authRoutes.post('/signup', (req, res, next) => {
     if (err) {
       res.status(500).json({
         message: "Username check went bad."
-      });
-      return;
+      })
+      return
     }
 
     if (foundUser) {
       res.status(400).json({
         message: 'Username taken. Choose another one.'
-      });
-      return;
+      })
+      return
     }
 
     const salt = bcrypt.genSaltSync(10);
@@ -74,14 +74,14 @@ authRoutes.post('/signup', (req, res, next) => {
       diet,
       recipe,
       memory
-    });
+    })
 
     aNewUser.save(err => {
       if (err) {
         res.status(400).json({
           message: 'Saving user to database went wrong.'
-        });
-        return;
+        })
+        return
       }
 
       req.login(aNewUser, (err) => {
@@ -89,15 +89,15 @@ authRoutes.post('/signup', (req, res, next) => {
         if (err) {
           res.status(500).json({
             message: 'Login after signup went bad.'
-          });
-          return;
+          })
+          return
         }
 
         res.status(200).json(aNewUser);
-      });
-    });
-  });
-});
+      })
+    })
+  })
+})
 
 
 authRoutes.post('/login', (req, res, next) => {
@@ -105,47 +105,47 @@ authRoutes.post('/login', (req, res, next) => {
     if (err) {
       res.status(500).json({
         message: 'Something went wrong authenticating user'
-      });
-      return;
+      })
+      return
     }
 
     if (!theUser) {
       res.status(401).json(failureDetails);
-      return;
+      return
     }
 
     req.login(theUser, (err) => {
       if (err) {
         res.status(500).json({
           message: 'Session save went bad.'
-        });
-        return;
+        })
+        return
       }
-      res.status(200).json(theUser);
-    });
-  })(req, res, next);
-});
+      res.status(200).json(theUser)
+    })
+  })(req, res, next)
+})
 
 
 
 authRoutes.post('/logout', (req, res, next) => {
-  req.logout();
+  req.logout()
   res.status(200).json({
     message: 'Log out success!'
-  });
-});
+  })
+})
 
 
 authRoutes.get('/loggedin', (req, res, next) => {
   if (req.isAuthenticated()) {
     res.status(200).json(req.user);
-    return;
+    return
   }
   res.status(403).json({
     message: 'Unauthorized'
-  });
-});
+  })
+})
 
 
 
-module.exports = authRoutes;
+module.exports = authRoutes

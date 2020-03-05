@@ -1,8 +1,7 @@
-import React from "react";
-import Button from "../../../../elements/buttom/mainButton";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import React from "react"
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
 
 const Warming = props => {
   return (
@@ -24,7 +23,7 @@ const Warming = props => {
          </Col>
       </Row>
     </Container>
-  );
-};
+  )
+}
 
-export default Warming;
+export default Warming

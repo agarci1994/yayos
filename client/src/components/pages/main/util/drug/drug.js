@@ -1,12 +1,11 @@
-import React from "react";
-import Button from "../../../../elements/buttom/mainButton";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Tab from "react-bootstrap/Tab";
-import Nav from "react-bootstrap/Nav";
+import React from "react"
 import CardDrug from "../../../../cards/drug/cardDrug"
-import "./drug-module.css";
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
+import Tab from "react-bootstrap/Tab"
+import Nav from "react-bootstrap/Nav"
+import "./drug-module.css"
 
 const pils = {
   monday: 
@@ -105,7 +104,7 @@ const Drug = props => {
         </Tab.Container>
       </div>
     </Container>
-  );
-};
+  )
+}
 
-export default Drug;
+export default Drug

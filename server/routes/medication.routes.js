@@ -12,8 +12,8 @@ router.get('/', (req, res, next) => {
 
 
 router.post('/new', (req, res, next) => {
-    Coaster.create(req.body)
-        .then(theCoaster => res.json(theCoaster))
+    Medication.create(req.body)
+        .then(theMedication => res.json(theMedication))
         .catch(err => console.log(err))
 })
 

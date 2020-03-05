@@ -1,9 +1,6 @@
-import React from "react";
+import React from "react"
 import Card from 'react-bootstrap/Card'
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Table from "react-bootstrap/Table";
+import Col from "react-bootstrap/Col"
 import './food.css'
 
 const Diet = props => {
@@ -21,4 +18,4 @@ return (
 )
 };
 
-export default Diet;
+export default Diet

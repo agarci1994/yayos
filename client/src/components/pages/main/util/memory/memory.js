@@ -1,17 +1,16 @@
-import React, { Component } from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import MemoryServices from "../../../../../services/memory.services";
+import React, { Component } from "react"
+import MemoryServices from "../../../../../services/memory.services"
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
+import Form from "react-bootstrap/Form"
+import Button from "react-bootstrap/Button"
 import styled from 'styled-components'
-import "./memory-module.css";
+import "./memory-module.css"
 
 const Text = styled.text`
 color: rgb(49, 49, 49);
 font-size:1.1em;
-
 `
 
 
@@ -23,14 +22,14 @@ class Memory extends Component {
       description: "",
       date: "",
       memory: props.loggedInUser.memory
-    };
-    this.services = new MemoryServices();
+    }
+    this.services = new MemoryServices()
   }
 
   handleChange = e => {
-    let { name, value } = e.target;
-    this.setState({ [name]: value });
-  };
+    let { name, value } = e.target
+    this.setState({ [name]: value })
+  }
 
   postMemory = () => {
     this.services
@@ -39,15 +38,15 @@ class Memory extends Component {
         this.setState({
           description: "",
           date: ""
-        });
+        })
       })
-      .catch(err => console.log({ err }));
-  };
+      .catch(err => console.log({ err }))
+  }
 
   handleSubmit = e => {
-    e.preventDefault();
-    this.postMemory();
-  };
+    e.preventDefault()
+    this.postMemory()
+  }
 
   render() {
     return (
@@ -79,7 +78,7 @@ class Memory extends Component {
                     </Button>
                   </div>
                 </Form>
-                <img src="../../../../../../images/muñeco-pensando-png-1.png" />
+                <img src="../../../../../../images/muñeco-pensando-png-1.png" alt="thinking" />
               </Col>
               <Col md={5}>
                  {this.state.memory.map(elm => <Text>- {elm.description} | {elm.date}<br/></Text>)}
@@ -88,8 +87,8 @@ class Memory extends Component {
           </Col>
         </Row>
       </Container>
-    );
+    )
   }
 }
 
-export default Memory;
+export default Memory

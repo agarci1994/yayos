@@ -1,11 +1,10 @@
-import React from "react";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Tab from "react-bootstrap/Tab";
-import Nav from "react-bootstrap/Nav";
+import React from "react"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
+import Tab from "react-bootstrap/Tab"
+import Nav from "react-bootstrap/Nav"
 
 const CardDrug = props => {
-  console.log(props);
   return (
     <Row className="tab-hours">
       <Col sm={12}>
@@ -50,4 +49,4 @@ const CardDrug = props => {
   );
 };
 
-export default CardDrug;
+export default CardDrug

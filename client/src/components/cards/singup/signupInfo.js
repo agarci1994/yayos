@@ -1,11 +1,10 @@
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-
-import "./signup-role-module.css";
+import React from "react"
+import Container from "react-bootstrap/Container"
+import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
+import Form from "react-bootstrap/Form"
+import Button from "react-bootstrap/Button"
+import "./signup-role-module.css"
 
 const CardRole = props => {
 
@@ -135,7 +134,7 @@ const CardRole = props => {
         </Form>
       </Container>
     </div>
-  );
-};
+  )
+}
 
-export default CardRole;
+export default CardRole

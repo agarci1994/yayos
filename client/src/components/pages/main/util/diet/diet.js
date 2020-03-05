@@ -1,12 +1,12 @@
-import React, {Component} from "react";
-import Button from "../../../../elements/buttom/mainButton";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Table from "react-bootstrap/Table";
+import React, {Component} from "react"
+import DietServices from "../../../../../services/dietType.services"
 import CardFood from "../../../../cards/diet/food"
 import Recipes from "../../../../cards/diet/recipes"
-import DietServices from "../../../../../services/dietType.services";
+import Button from "../../../../elements/buttom/mainButton"
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
+import Table from "react-bootstrap/Table"
 import Popover from 'react-bootstrap/Popover'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import './diet-module.css'
@@ -55,7 +55,7 @@ const Example = () => (
     <Button variant="success">Click me to see</Button>
   </OverlayTrigger>
 );
- return this.state.recipe.length != 1 && this.state.recipe.map((elm, idx) =><Recipes day={idx} breakfast={elm[idx].breakfast.name} lunch={elm[idx].lunch.name} dinner={elm[idx].dinner.name} />)}
+ return this.state.recipe.length !== 1 && this.state.recipe.map((elm, idx) => <Recipes day={idx} breakfast={elm[idx].breakfast.name} lunch={elm[idx].lunch.name} dinner={elm[idx].dinner.name} />)}
 
 
 render() {
@@ -88,7 +88,7 @@ return this.state.diet.length ? (
           </Col>
         </Row>
         <div className="imgDiet">
-        <img src = "../../../../../../images/cook.jpg" />
+        <img src = "../../../../../../images/cook.jpg" alt="cook"/>
       </div>
       </Container>
     </div>
