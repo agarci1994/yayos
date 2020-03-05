@@ -24,6 +24,8 @@ app.use('/api/memory', require('./routes/memories.routes'))
 // app.use('/api/medication', require('./routes/medication.routes'))
 // app.use('/api/training', require('./routes/training.routes'))
 
-      
+app.use((req, res) => {
+    res.sendFile(_dirname + "/public/index.html")
+})
 
 module.exports = app;
