@@ -3,20 +3,20 @@ import axios from "axios";
 export default class Services {
     constructor() {
         this.service = axios.create({
-            baseURL: "http://localhost:5000/api/memory",
+            baseURL: `${process.env.REACT_APP_URL}/memory`,
             withCredentials: true
         });
     }
 
- memory = ({
-         description,
-         date
-     }) => this.service
-     .post("/list", {
-         description,
-         date
-     })
-     .then(response => response.data)
-     .catch(err => console.log(err))
+    memory = ({
+            description,
+            date
+        }) => this.service
+        .post("/list", {
+            description,
+            date
+        })
+        .then(response => response.data)
+        .catch(err => console.log(err))
 
 }
