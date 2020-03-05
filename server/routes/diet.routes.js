@@ -15,10 +15,6 @@ router.post('/new', (req, res, next) => {
 })
 
 router.get('/main', (req, res, next) => {
-    console.log("aqui si que entra")
-    res.json({
-        msg: "funciona"
-    })
     searchDiet.getRecipe(req.user.diet)
         .then(recipe => {
             let recipes = []
