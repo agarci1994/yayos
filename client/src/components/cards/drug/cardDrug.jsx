@@ -10,13 +10,13 @@ const pilsForHours = {
   night: []
 };
 
+
 const hoursForPils = pilsForDay => {
-  
+  console.log(pilsForHours.morning)
   pilsForDay.map(elm => {
     elm.hours.includes("Morning") && pilsForHours.morning.push(elm);
-    elm.hours.includes("Afternoom") && pilsForHours.morning.push(elm);
-    elm.hours.includes("Night") && pilsForHours.morning.push(elm);
-    console.log(pilsForHours);
+    elm.hours.includes("Afternoom") && pilsForHours.afternoom.push(elm);
+    elm.hours.includes("Night") && pilsForHours.night.push(elm);
   });
 };
 
@@ -48,17 +48,29 @@ const CardDrug = props => {
           <Tab.Content>
             <Tab.Pane eventKey="morning">
               {pilsForHours.morning.map((elm, idx) => (
-                <h1 key={idx}>{elm.name}</h1>
+                <>
+                  <h1 key={idx}>{elm.name}</h1>
+                  <p>{elm.description}</p>
+                  <p>{elm.quantityDay}</p>
+                </>
               ))}
             </Tab.Pane>
             <Tab.Pane eventKey="afternoom">
               {pilsForHours.afternoom.map((elm, idx) => (
-                <h1 key={idx}>{elm.name}</h1>
+                <>
+                  <h1 key={idx}>{elm.name}}</h1>
+                  <p>{elm.description}</p>
+                  <p>{elm.quantityDay}</p>
+                </>
               ))}
             </Tab.Pane>
             <Tab.Pane eventKey="night">
               {pilsForHours.night.map((elm, idx) => (
-                <h1 key={idx}>{elm.name}</h1>
+                <>
+                  <h1 key={idx}>{elm.name}</h1>
+                  <p>{elm.description}</p>
+                  <p>{elm.quantityDay}</p>
+                </>
               ))}
             </Tab.Pane>
           </Tab.Content>

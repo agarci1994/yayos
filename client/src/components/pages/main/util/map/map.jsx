@@ -1,9 +1,11 @@
-import React, { Component } from "react"
-import { Map, GoogleApiWrapper, Marker } from "google-maps-react"
+import React, { Component } from "react";
+import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
+import "./maps.css";
 
 const mapStyles = {
+  margin: "auto",
   width: "50%",
-  height: "100%"
+  height: "95%"
 };
 
 class Events extends Component {
@@ -31,7 +33,7 @@ class Events extends Component {
             lat: store.latitude,
             lng: store.longitude
           }}
-              onClick={() => alert(this.state.stores[0].lat)}
+          onClick={() => alert(this.state.stores[0].lat)}
         />
       )
     })
@@ -39,14 +41,16 @@ class Events extends Component {
 
   render() {
     return (
-      <Map
-        google={this.props.google}
-        zoom={8}
-        style={mapStyles}
-        initialCenter={{ lat: 47.444, lng: -122.176 }}
-      >
-            {this.displayMarkers()}
-      </Map>
+      <div className="maps">
+        <Map
+          google={this.props.google}
+          zoom={8}
+          style={mapStyles}
+          initialCenter={{ lat: 40.4165001, lng: -3.7025599 }}
+        >
+          {this.displayMarkers()}
+        </Map>
+      </div>
     )
   }
 }

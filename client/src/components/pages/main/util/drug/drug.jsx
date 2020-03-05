@@ -26,7 +26,6 @@ class Drug extends Component {
   componentDidMount = () => {
     const copyState = { ...this.state };
     const days = Object.keys(this.state);
-    console.log(days);
     this.services
       .searchDrug(this.props.loggedInUser._id)
       .then(response => {
