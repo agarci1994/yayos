@@ -6,6 +6,7 @@ export default class Services {
             baseURL: `${process.env.REACT_APP_URL}/diet`,
             withCredentials: true
         });
+        
     }
 
     dietType = (diet) => {
