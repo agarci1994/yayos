@@ -15,18 +15,17 @@ let DynamicComponent
 
 const Memory = () => {
     return (
-        <Accordion defaultActiveKey={0}>
+        <Accordion>
             {train.map((elm, idx) =>{
             DynamicComponent = elm
             return <Card>
                 <Accordion.Toggle as={Card.Header} eventKey={idx}>
-                    Ejercicio {idx + 1}
+                    Ejercicio {idx + 1} 
                  </Accordion.Toggle>
                 <Accordion.Collapse eventKey={idx}>
                     <Card.Body><DynamicComponent /></Card.Body>
                 </Accordion.Collapse>
             </Card>})}
-
         </Accordion>
     );
 };
