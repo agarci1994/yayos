@@ -1,11 +1,17 @@
 import React, { Component } from "react";
+
+/* ----- RRD components ----- */
 import { Switch, Route, Redirect } from "react-router-dom";
 
+/* ----- auth components ----- */
 import AuthServices from "./services/auth.services";
 
+/* ----- UI components ----- */
 import Nav from "./components/elements/nav/Nav";
 import Signup from "./components/pages/auth/signup/Signup";
 import Login from "./components/pages/auth/login/Login";
+
+/* ----- RRD components ----- */
 import Index from "./components/pages/index/index";
 import Profile from "./components/pages/profile/Profile";
 import Main from "./components/pages/main/main";
