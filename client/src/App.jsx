@@ -1,25 +1,30 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 
 /* ----- RRD components ----- */
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom"
 
 /* ----- auth components ----- */
-import AuthServices from "./services/auth.services";
+import AuthServices from "./services/auth.services"
 
 /* ----- UI components ----- */
-import Nav from "./components/elements/nav/Nav";
-import Signup from "./components/pages/auth/signup/Signup";
-import Login from "./components/pages/auth/login/Login";
+import Nav from "./components/elements/nav/Nav"
+import Signup from "./components/pages/auth/signup/Signup"
+import Login from "./components/pages/auth/login/Login"
 
 /* ----- RRD components ----- */
-import Index from "./components/pages/index/index";
-import Profile from "./components/pages/profile/Profile";
-import Main from "./components/pages/main/main";
-import Warming from "./components/pages/main/util/warming/warming";
-import Diet from "./components/pages/main/util/diet/diet";
-import Drug from "./components/pages/main/util/drug/drug";
-import Memory from "./components/pages/main/util/memory/memory";
-import Events from "./components/pages/main/util/map/map";
+import Index from "./components/pages/index/index"
+import Profile from "./components/pages/profile/Profile"
+import Main from "./components/pages/main/main"
+import Warming from "./components/pages/main/util/warming/warming"
+import Diet from "./components/pages/main/util/diet/diet"
+import Drug from "./components/pages/main/util/drug/drug"
+import Memory from "./components/pages/main/util/memory/memory"
+import Events from "./components/pages/main/util/map/map"
+import Ejercite from "./components/pages/main/util/ejercite/ejercite"
+import Brain from "./components/pages/main/util/ejercite/memory/ejerciteMemory"
+import Sport from "./components/pages/main/util/ejercite/sport/ejerciteSport"
+
+
 
 import "./App.css";
 
@@ -28,7 +33,7 @@ class App extends Component {
     super();
     this.state = {
       loggedInUser: false
-    };
+    }
     this.services = new AuthServices();
   }
 
@@ -38,7 +43,8 @@ class App extends Component {
   setTheUser = userObj =>
     this.setState({
       loggedInUser: userObj
-    });
+    })
+
   fetchUser = () => {
     this.services
       .loggedin()
@@ -51,8 +57,8 @@ class App extends Component {
         this.setState({
           loggedInUser: false
         })
-      );
-  };
+      )
+  }
 
   render() {
     return (
@@ -146,10 +152,22 @@ class App extends Component {
                 )
               }
             />
+            <Route
+              path="/ejercite"
+              render={() => <Ejercite loggedInUser={this.state.loggedInUser} />}
+            />
+            <Route
+              path="/braing-training"
+              render={() => <Brain loggedInUser={this.state.loggedInUser} />}
+            />
+            <Route
+              path="/sport-training"
+              render={() => <Sport loggedInUser={this.state.loggedInUser} />}
+            />
           </Switch>
         </main>
       </div>
-    );
+    )
   }
 }
 export default App;

@@ -1,0 +1,31 @@
+.together {
+    display: flex;
+    justify-content: space-between;
+}
+
+.center {
+    text-align: center;
+    border-bottom: 1mm ridge rgba(224, 224, 255, 0.6);
+    margin-bottom: 30px;
+}
+
+.center p {
+    font-size: 1.5em;
+}
+
+.center p {
+    font-size: 2em;
+}
+
+.center h2 {
+    font-size: 3em;
+}
+
+.end {
+    font-weight: 800;
+    font-size: 2em;
+}
+
+.together p {
+    font-size: 1.5em;
+}

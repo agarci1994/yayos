@@ -9,3 +9,13 @@
     overflow: hidden;
     overflow-y: scroll;
 }
+
+.titleMap{
+    font-size: 1.3em;
+    font-weight: 400;
+    text-align: center;
+}
+
+.listMap a{
+  color: grey;
+}
