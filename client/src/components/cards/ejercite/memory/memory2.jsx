@@ -7,18 +7,23 @@ import Form from "react-bootstrap/Form";
 
 import "./ejercite.css";
 
-class Memory1 extends Component {
+class Memory2 extends Component {
   constructor() {
     super();
     this.state = {
       pair: "",
-      inpair: ""
+      inpair: "",
+      array: [],
     };
   }
 
   handleSubmit = e => {
     e.preventDefault(e);
-    this.state.pair == 1 && this.state.inpair == 0
+    let resultPair = 0
+    let resultInpair = 0
+    this.state.array.forEach(elm => elm % 2 === 0 ? resultPair++  : resultInpair++)
+    this.state.pair === resultPair &&
+    this.state.inpair === resultInpair
       ? alert("Has acertado")
       : alert("Has fallado");
   };
@@ -28,28 +33,37 @@ class Memory1 extends Component {
     this.setState({ [name]: value });
   };
 
+  genereteNumber = () => {
+    const newArr = [];
+    for (let i = 0; i < 60; i++) {
+      newArr.push(Math.floor(Math.random() * (1000 - 600) + 600));
+    }
+    this.setState({
+      array: newArr
+    });
+  };
+
+  componentDidMount = () => {
+    this.genereteNumber();
+  };
+
   render() {
     return (
       <Container>
         <Form onSubmit={e => this.handleSubmit(e)}>
           <Row className="jutify-content-bentween">
-            <Col md={12} className="center">
+            <Col md={12} className="centerGame">
               <h2>Pares e impares</h2>
               <p>
                 Indique la cantidad de cifras pares e impares del cuadro
                 inferior.
               </p>
             </Col>
-            <Col className="together" md={12}>
-              <p>
-                614 || 633 || 638 || 617 || 651 || 630 || 659 || 625 || 645 ||
-                624 || 640 || 655 || 643 || 652 || 626 || 641 || 616 || 619 ||
-                642 || 636 || 637 || 661 || 628 || 623 || 620 || 663 || 646 ||
-                657 || 650 || 647 || 632 || 631 || 627 || 618 || 621 || 649 ||
-                629 || 634 || 639 || 654 || 622 || 653 || 615 || 648 || 656 ||
-                635
-              </p>
-            </Col>
+            {this.state.array.map((elm, idx) => (
+              <Col className="number" md={1} key={idx}>
+                <p>{elm}</p>{" "}
+              </Col>
+            ))}
             <Row className="justify-content-between">
               <Col md={4}>
                 <p>Pares:</p>
@@ -72,11 +86,11 @@ class Memory1 extends Component {
                 />
               </Col>
               <Col md={2}>
+              </Col>
+            </Row>
                 <Button variant="dark" type="submit">
                   Comprobar
                 </Button>
-              </Col>
-            </Row>
           </Row>
         </Form>
       </Container>
@@ -84,4 +98,4 @@ class Memory1 extends Component {
   }
 }
 
-export default Memory1;
+export default Memory2;

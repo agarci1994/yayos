@@ -3,17 +3,13 @@
     justify-content: space-between;
 }
 
-.center {
+.centerGame {
     text-align: center;
     border-bottom: 1mm ridge rgba(224, 224, 255, 0.6);
     margin-bottom: 30px;
 }
 
-.center p {
-    font-size: 1.5em;
-}
-
-.center p {
+.centerGame p {
     font-size: 2em;
 }
 
@@ -28,4 +24,8 @@
 
 .together p {
     font-size: 1.5em;
+}
+
+.number p {
+    font-size: 1.6em;
 }

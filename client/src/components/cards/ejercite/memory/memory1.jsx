@@ -33,22 +33,22 @@ class Memory1 extends Component {
   handleSubmit = e => {
     e.preventDefault(e);
 
-    this.state.one == 0 &&
-    this.state.two == 1 &&
-    this.state.three == 0 &&
-    this.state.four == 1 &&
-    this.state.five == 3 &&
-    this.state.six == 0 &&
-    this.state.seven == 0 &&
-    this.state.eight == 0 &&
-    this.state.nine == 1 &&
-    this.state.ten == 1 &&
-    this.state.eleven == 1 &&
-    this.state.twelve == 2 &&
-    this.state.thirteen == 3 &&
-    this.state.fourteen == 0 &&
-    this.state.fiveteen == 1 &&
-    this.state.total == 14
+    this.state.one === 0 &&
+    this.state.two === 1 &&
+    this.state.three === 0 &&
+    this.state.four === 1 &&
+    this.state.five === 3 &&
+    this.state.six === 0 &&
+    this.state.seven === 0 &&
+    this.state.eight === 0 &&
+    this.state.nine === 1 &&
+    this.state.ten === 1 &&
+    this.state.eleven === 1 &&
+    this.state.twelve === 2 &&  
+    this.state.thirteen === 3 &&
+    this.state.fourteen === 0 &&
+    this.state.fiveteen === 1 &&
+    this.state.total === 14
       ? alert("Has acertado")
       : alert("Has fallado");
   };
@@ -63,7 +63,7 @@ class Memory1 extends Component {
       <Container>
         <Form onSubmit={e => this.handleSubmit(e)}>
           <Row className="jutify-content-bentween">
-            <Col md={12} className="center">
+            <Col md={12} className="centerGame">
               <h2>Compartir un hogar</h2>
               <p>
                 Repase atentamente la lectura; después, escriba a la derecha
