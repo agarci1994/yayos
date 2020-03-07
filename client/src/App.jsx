@@ -154,15 +154,30 @@ class App extends Component {
             />
             <Route
               path="/ejercite"
-              render={() => <Ejercite loggedInUser={this.state.loggedInUser} />}
+              render={() => this.state.loggedInUser ? (
+                <Ejercite loggedInUser={this.state.loggedInUser} />
+              ) : (
+                  <Redirect to="/" />
+                )
+              }
             />
             <Route
               path="/braing-training"
-              render={() => <Brain loggedInUser={this.state.loggedInUser} />}
+              render={() => this.state.loggedInUser ? (
+                <Brain loggedInUser={this.state.loggedInUser} />
+              ) : (
+                  <Redirect to="/" />
+                )
+              }
             />
             <Route
               path="/sport-training"
-              render={() => <Sport loggedInUser={this.state.loggedInUser} />}
+              render={() => this.state.loggedInUser ? (
+                <Sport loggedInUser={this.state.loggedInUser} />
+              ) : (
+                  <Redirect to="/" />
+                )
+              }
             />
           </Switch>
         </main>

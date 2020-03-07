@@ -12,7 +12,6 @@ const pilsForHours = {
 
 
 const hoursForPils = pilsForDay => {
-  console.log(pilsForHours.morning)
   pilsForDay.map(elm => {
     elm.hours.includes("Morning") && pilsForHours.morning.push(elm);
     elm.hours.includes("Afternoom") && pilsForHours.afternoom.push(elm);

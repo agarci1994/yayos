@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-import "./ejercite.css";
+import "./ejerciteMemory.css";
 
 class Memory3 extends Component {
   constructor() {

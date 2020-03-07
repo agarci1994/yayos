@@ -1,15 +1,25 @@
-import React from "react"
-import Container from "react-bootstrap/Container"
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
+import React, { Component } from "react";
+import Container from "react-bootstrap/Container";
 
 
-const Memory6 = props => {
-    return (
-        <h1>
-           tetata
-   </h1>
-    )
-};
+class Memory6 extends Component {
+    constructor() {
+        super();
+        this.state = {
+        };
+    }
+
+
+    render() {
+        return (
+            <Container>
+                <div>
+                    <h1>Juego</h1>
+                    <canvas ref="canvas" width={640} height={425} />
+                </div> 
+            </Container>
+        );
+    }
+}
 
 export default Memory6

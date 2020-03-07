@@ -18,7 +18,7 @@ const Memory = () => {
         <Accordion>
             {train.map((elm, idx) =>{
             DynamicComponent = elm
-            return <Card>
+            return <Card key={idx}>
                 <Accordion.Toggle as={Card.Header} eventKey={idx}>
                     Ejercicio {idx + 1} 
                  </Accordion.Toggle>
