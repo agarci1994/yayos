@@ -23,6 +23,8 @@ import Events from "./components/pages/main/util/map/map"
 import Ejercite from "./components/pages/main/util/ejercite/ejercite"
 import Brain from "./components/pages/main/util/ejercite/memory/ejerciteMemory"
 import Sport from "./components/pages/main/util/ejercite/sport/ejerciteSport"
+import Doctor from "./components/pages/main/util/doctor/doctor"
+
 
 
 
@@ -174,6 +176,15 @@ class App extends Component {
               path="/sport-training"
               render={() => this.state.loggedInUser ? (
                 <Sport loggedInUser={this.state.loggedInUser} />
+              ) : (
+                  <Redirect to="/" />
+                )
+              }
+            />
+            <Route
+              path="/medical"
+              render={() => this.state.loggedInUser ? (
+                <Doctor loggedInUser={this.state.loggedInUser} />
               ) : (
                   <Redirect to="/" />
                 )

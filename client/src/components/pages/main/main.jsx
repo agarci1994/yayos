@@ -26,7 +26,7 @@ function chooseMain(props) {
             <Button skyblue className="button" name="Papeles" url="/" />
           </Col>
           <Col xs={10} md={5} lg={3}>
-            <Button blue className="button" name="Medico" url="/" />
+            <Button blue className="button" name="Medico" url="/medical" />
           </Col>
           <Col xs={10} md={5} lg={3}>
             <Button purple className="button" name="Ejercicios" url="/ejercite" />
