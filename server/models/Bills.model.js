@@ -6,7 +6,7 @@ const billSchema = new Schema({
     description: String,
     day: Date,
     price: Number,
-    yayo: {
+    user: {
         type: Schema.ObjectId,
         ref: User
     }

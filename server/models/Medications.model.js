@@ -13,7 +13,7 @@ const drugSchema = new Schema({
     color: String,
     form: ["little-circle", "big-circle", "liquid", "pill"],
     price: Number,
-    yayo: {
+    user: {
         type: Schema.ObjectId,
         ref: User
     }

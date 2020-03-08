@@ -14,7 +14,7 @@ const drugs = [{
     color: "blue",
     form: ["big-circle"],
     price: 8.30,
-    yayo: new mongoose.Types.ObjectId("5e60e4df725854001794a419")
+    user: new mongoose.Types.ObjectId("5e60e4df725854001794a419")
   },
   {
     name: "Alergia",
@@ -26,7 +26,7 @@ const drugs = [{
     color: "White",
     form: ["little-circle"],
     price: 2.1,
-    yayo: new mongoose.Types.ObjectId("5e60e4df725854001794a419")
+    user: new mongoose.Types.ObjectId("5e60e4df725854001794a419")
   },
   {
     name: "Depresion",
@@ -38,7 +38,7 @@ const drugs = [{
     color: "blue",
     form: ["liquid"],
     price: 4.23,
-    yayo: new mongoose.Types.ObjectId("5e60e4df725854001794a419")
+    user: new mongoose.Types.ObjectId("5e60e4df725854001794a419")
   },
   {
     name: "Almax",
@@ -50,7 +50,7 @@ const drugs = [{
     color: "blue",
     form: ["big-circle"],
     price: 4,
-    yayo: new mongoose.Types.ObjectId("5e60e4df725854001794a419")
+    user: new mongoose.Types.ObjectId("5e60e4df725854001794a419")
   },
   {
     name: "Omeprazol",
@@ -62,7 +62,7 @@ const drugs = [{
     color: "blue",
     form: ["little-circle"],
     price: 3.4,
-    yayo: new mongoose.Types.ObjectId("5e60e4df725854001794a419")
+    user: new mongoose.Types.ObjectId("5e60e4df725854001794a419")
 
   }
 ]

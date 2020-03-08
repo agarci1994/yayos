@@ -13,7 +13,7 @@ const userSchema = new Schema({
   especiality: String,
   phone: Number,
   affliction: [String],
-  yayo: String,
+  user: String,
   diet: String,
   recipe: Array,
   memory: [Object]

@@ -18,7 +18,7 @@ authRoutes.post('/signup', (req, res, next) => {
     especiality,
     phone,
     affliction,
-    yayo,
+    user,
     diet,
     recipe,
     memory
@@ -70,7 +70,7 @@ authRoutes.post('/signup', (req, res, next) => {
       especiality,
       phone,
       affliction,
-      yayo,
+      user,
       diet,
       recipe,
       memory

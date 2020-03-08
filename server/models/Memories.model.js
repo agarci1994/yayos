@@ -5,7 +5,7 @@ const User = mongoose.model('./User.model.js')
 const memorySchema = new Schema({
     description: String,
     day: Date,
-    yayo: { type: Schema.ObjectId, ref: User }
+    user: { type: Schema.ObjectId, ref: User }
 }, {
     timestamps: {
         createdAt: 'created_at',
