@@ -36,6 +36,7 @@ class Events extends Component {
             lat: elm.location.latitude,
             lng: elm.location.longitude
           }}
+          // NECESITO LLAMAR A ESTE ONCLICK DESDE EL HOVER DE LA LISTA (¿COMO SE PUDE HACER?)
           onClick={() => alert(elm.title)}
           icon={{
               url: icon,

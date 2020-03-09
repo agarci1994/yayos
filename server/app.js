@@ -21,9 +21,7 @@ app.use('/api/memory', require('./routes/memories.routes'))
 app.use('/api/medication', require('./routes/medication.routes'))
 app.use('/api/events', require('./routes/events.routes'))
 app.use('/api/medical', require('./routes/medical.routes'))
-
-
-// app.use('/api/bills', require('./routes/bills.routes'))
+app.use('/api/bills', require('./routes/bills.routes'))
 
 app.use((req, res) => {
     res.sendFile(_dirname + "/public/index.html")

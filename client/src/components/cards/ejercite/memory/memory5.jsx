@@ -20,7 +20,7 @@ class Memory5 extends Component {
 
   handleSubmit = e => {
     e.preventDefault(e);
-    this.state.number1 * this.state.number2 === this.state.numberUser ? this.genereteNumber() : alert("mal")
+    this.state.number1 * this.state.number2 == this.state.numberUser ? this.genereteNumber() : alert("mal")
   };
 
   handleChange = e => {

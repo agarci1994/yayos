@@ -20,6 +20,7 @@ const hoursForPils = pilsForDay => {
 };
 
 const CardDrug = props => {
+  console.log(props)
   hoursForPils(props.pilsForDay);
   return (
     <Tab.Container id="left-tabs-example" defaultActiveKey="first">

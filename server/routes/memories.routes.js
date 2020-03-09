@@ -25,4 +25,10 @@ router.get('/find', (req, res, next) => {
         .catch(err => console.log(err))
 })
 
+router.get('/delete', (req, res, next) => {
+    User.findByIdAndUpdate(req.user._id, {memory: []})
+        .then(user => console.log(user.memory))
+        .catch(err => console.log(err))
+})
+
 module.exports = router;

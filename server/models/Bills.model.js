@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const User = mongoose.model('./User.model.js')
 
-const billSchema = new Schema({
-    description: String,
-    day: Date,
-    price: Number,
+const User = require('./User.model')
+
+const billsSchema = new Schema({
+    type: String,
+    dayPay: Date,
     user: {
         type: Schema.ObjectId,
         ref: User
@@ -17,5 +17,5 @@ const billSchema = new Schema({
     }
 });
 
-const Bill = mongoose.model('Bill', billSchema);
-module.exports = Bill
+const Bills = mongoose.model('Bills', billsSchema);
+module.exports = Bills

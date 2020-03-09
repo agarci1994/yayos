@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const User = mongoose.model('./User.model.js')
+const User = require('./User.model.js')
 
 const memorySchema = new Schema({
     description: String,

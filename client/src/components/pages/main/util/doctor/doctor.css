@@ -1,18 +1,29 @@
-.date-doctor{
-        text-align: center;
+.date-doctor {
+    text-align: center;
 }
 
-.date-doctor .button{
-margin: 40px;
+.date-doctor .button {
+    margin: 40px;
 }
 
-.date-doctor img{
+.date-doctor img {
     margin-top: -80px;
     width: 20%;
 }
 
-.date-doctor h1{
-font-weight: 300;
-margin-bottom: 50px;
+.date-doctor h1 {
+    font-weight: 300;
+    margin-bottom: 50px;
 }
 
+.input-doctor {
+    height: 89% !important
+}
+
+.space {
+    margin: 30px 0 90px 0
+}
+
+.space h4 {
+    font-weight: 400;
+}

@@ -10,3 +10,14 @@
     margin-left: -200px;
     width: 30%
 }
+
+.sucess {
+    text-decoration: line-through;
+}
+
+.cleanButton{
+    height: 45px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(243, 243, 243);
+}

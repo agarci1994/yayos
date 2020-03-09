@@ -4,7 +4,8 @@ const User = require('./User.model')
 
 const appointmentSchema = new Schema({
     description: String,
-    day: Date,
+    day: String,
+    time: String,
     user: {
         type: Schema.ObjectId,
         ref: User

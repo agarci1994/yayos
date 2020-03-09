@@ -1,0 +1,15 @@
+.input-date {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.buttonForm{
+  text-align: end;
+}
+.symbol{
+    margin:10px;
+    text-align: center;
+}
+.symbol img{
+    width: 30%;
+}

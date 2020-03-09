@@ -22,7 +22,7 @@ class Memory3 extends Component {
     e.preventDefault(e);
     let arr = [...this.state.try];
 
-    if (this.state.numberUser === this.state.result) {
+    if (this.state.numberUser == this.state.result) {
       alert("Has acertado");
       this.genereteNumber();
       this.setState({ try: [] });

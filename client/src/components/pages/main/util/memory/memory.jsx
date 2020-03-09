@@ -10,7 +10,15 @@ import "./memory-module.css";
 
 const Text = styled.text`
   color: rgb(49, 49, 49);
+  text-align:center;
   font-size: 1.1em;
+  position: relative;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  list-style: none;
+  width: 140%
 `;
 
 class Memory extends Component {
@@ -39,7 +47,8 @@ class Memory extends Component {
         this.setState({
           description: "",
           date: "",
-          memory: res.user.memory
+          memory: res.user.memory.reverse(),
+          ready: false
         });
       })
       .catch(err =>
@@ -54,6 +63,13 @@ class Memory extends Component {
     this.postMemory();
   };
 
+  deleteList = () => this.services.delete(this.props.loggedInUser);
+
+  toggle = e =>
+    e.target.classList.length < 3
+      ? (e.target.className += " sucess")
+      : (e.target.className = "sc-AxjAm eMqaZk");
+
   render() {
     return (
       <Container className="memoryForm">
@@ -63,14 +79,14 @@ class Memory extends Component {
               <Col md={5}>
                 <Form className="form-memory" onSubmit={this.handleSubmit}>
                   <Form.Group controlId="formBasicEmail">
-                    <h3> ¿Qué tienes que hacer ? </h3>
+                    <h3> ¿Qué tienes que hacer? </h3>
                     <Form.Control
                       type="String"
                       name="description"
                       value={this.state.description}
                       onChange={this.handleChange}
                     />
-                    <h3> ¿Cuándo ? </h3>
+                    <h3> ¿Cuándo? </h3>
                     <Form.Control
                       type="Date"
                       name="date"
@@ -89,10 +105,13 @@ class Memory extends Component {
                   alt="thinking"
                 />
               </Col>
+              <div className="cleanButton" onClick={this.deleteList}>
+                Borrar todo
+              </div>
               <Col md={5}>
                 {this.state.memory.map((elm, idx) => (
-                  <Text key={idx} update={this.update}>
-                    -{elm.description} | {elm.date} <br />
+                  <Text key={idx} onClick={this.toggle} update={this.update}>
+                    {elm.description} | {elm.date} <br />
                   </Text>
                 ))}
               </Col>

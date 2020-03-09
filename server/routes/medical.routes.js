@@ -11,7 +11,7 @@ router.get('/all', (req, res, next) => {
 })
 
 router.post('/new', (req, res, next) => {
-Appointment.create({description: req.body.description, day: req.body.date, user: req.user})
+Appointment.create({description: req.body.description, day: req.body.date, time: req.body.time, user: req.user})
         .catch(err => console.log(err))
 })
 
