@@ -37,12 +37,17 @@ class Drug extends Component {
       .catch(err => console.log(err));
   };
 
+  needPils() {}
+
   render() {
     const days = Object.keys(this.state);
     return (
       <Container>
+        <div className="title-drug">
+          <h1>Tu pastillero:</h1>
+        </div>
         <div className="tab-pils">
-          <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+          <Tab.Container id="left-tabs-example" defaultActiveKey="Monday">
             <Row>
               <Col sm={2}>
                 <Nav variant="pills" className="flex-column">
@@ -94,6 +99,10 @@ class Drug extends Component {
               </Col>
             </Row>
           </Tab.Container>
+        </div>
+        <div className="title-drug">
+          <h2>Tienes que comprar:</h2>
+          <p>Pastillas para la tensión</p>
         </div>
       </Container>
     );

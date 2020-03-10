@@ -1,83 +1,106 @@
-import React from "react";
+import React, { Component } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
 
-const pilsForHours = {
-  morning: [],
-  afternoom: [],
-  night: []
-};
+class DrugForDay extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      morning: [],
+      afternoom: [],
+      night: []
+    };
+  }
 
+  componentWillReceiveProps() {
+    const copyState = { ...this.state };
+    this.props.pilsForDay.map(elm => {
+      elm.hours.includes("Morning") && copyState.morning.push(elm);
+      elm.hours.includes("Afternoom") && copyState.afternoom.push(elm);
+      elm.hours.includes("Night") && copyState.night.push(elm);
+    });
+    this.setState({ ...copyState });
+  }
 
-const hoursForPils = pilsForDay => {
-  pilsForDay.map(elm => {
-    elm.hours.includes("Morning") && pilsForHours.morning.push(elm);
-    elm.hours.includes("Afternoom") && pilsForHours.afternoom.push(elm);
-    elm.hours.includes("Night") && pilsForHours.night.push(elm);
-  });
-};
+  getColor(color){
+    switch(color){
+      case "blue": return '../../../../images/pilsblue.png'
+      case "White": return '../../../../images/pilswhite.png'
+      case "yellow": return '../../../../images/pilsyellow.png'
+    }
+  }
 
-const CardDrug = props => {
-  console.log(props)
-  hoursForPils(props.pilsForDay);
-  return (
-    <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-      <Row className="tab-hours">
-        <Col sm={12}>
-          <Nav variant="pills" className="flex-row justify-content-around">
-            <Nav.Item>
-              <Nav.Link eventKey="morning" className="nav-green">
-                <p>Mañana</p>
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="afternoom" className="nav-green">
-                <p>Tarde</p>
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="night" className="nav-green">
-                <p>Noche</p>
-              </Nav.Link>
-            </Nav.Item>
-          </Nav>
-        </Col>
-        <Col sm={12}>
-          <Tab.Content>
-            <Tab.Pane eventKey="morning">
-              {pilsForHours.morning.map((elm, idx) => (
-                <>
-                  <h1 key={idx}>{elm.name}</h1>
-                  <p>{elm.description}</p>
-                  <p>{elm.quantityDay}</p>
-                </>
-              ))}
-            </Tab.Pane>
-            <Tab.Pane eventKey="afternoom">
-              {pilsForHours.afternoom.map((elm, idx) => (
-                <>
-                  <h1 key={idx}>{elm.name}}</h1>
-                  <p>{elm.description}</p>
-                  <p>{elm.quantityDay}</p>
-                </>
-              ))}
-            </Tab.Pane>
-            <Tab.Pane eventKey="night">
-              {pilsForHours.night.map((elm, idx) => (
-                <>
-                  <h1 key={idx}>{elm.name}</h1>
-                  <p>{elm.description}</p>
-                  <p>{elm.quantityDay}</p>
-                </>
-              ))}
-            </Tab.Pane>
-          </Tab.Content>
-        </Col>
-      </Row>
-    </Tab.Container>
-  );
-};
+  render() {
+    return (
+      <>
+      <Tab.Container id="left-tabs-example" defaultActiveKey="morning">
+        <Row className="tab-hours">
+          <Col sm={12}>
+            <Nav variant="pills" className="flex-row justify-content-around">
+              <Nav.Item>
+                <Nav.Link eventKey="morning" className="nav-green">
+                  <p>Mañana</p>
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="afternoom" className="nav-green">
+                  <p>Tarde</p>
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="night" className="nav-green">
+                  <p>Noche</p>
+                </Nav.Link>
+              </Nav.Item>
+            </Nav>
+          </Col>
+          <Col sm={12}>
+              <Tab.Content className="big-box">
+                <Tab.Pane eventKey="morning" className="row d-flex box1">
+                  {this.state.morning.map((elm, idx) => (
+                    <Col md={4} className="pils">
+                      <div className="title-pils">
+                      <h3 key={idx}>{elm.name}</h3>
+                      <img src={this.getColor(elm.color)} />
+                      </div>
+                      <p>{elm.description}</p>
+                      <p>Toma: {elm.quantityDay} pastilla</p>
+                    </Col>
+                  ))}
+                </Tab.Pane>
+              <Tab.Pane eventKey="afternoom" className="row d-flex box2">
+                  {this.state.afternoom.map((elm, idx) => (
+                    <Col md={4} className="pils">
+                      <div className="title-pils">
+                      <h3 key={idx}>{elm.name}}</h3>
+                      <img src={this.getColor(elm.color)} />
+                      </div>
+                      <p>{elm.description}</p>
+                      <p>Toma: {elm.quantityDay} pastilla</p>
+                    </Col>
+                  ))}
+                </Tab.Pane>
+              <Tab.Pane eventKey="night" className="row d-flex box3">
+                  {this.state.night.map((elm, idx) => (
+                    <Col md={4} className="pils">
+                      <div className="title-pils">
+                      <h3 key={idx}>{elm.name}</h3>
+                      <img src={this.getColor(elm.color)} />
+                      </div>
+                      <p>{elm.description}</p>
+                      <p>Toma: {elm.quantityDay} pastilla</p>
+                    </Col>
+                  ))}
+                </Tab.Pane>
+              </Tab.Content>
+          </Col>
+        </Row>
+      </Tab.Container>
+      </>
+    );
+  }
+}
 
-export default CardDrug;
+export default DrugForDay;

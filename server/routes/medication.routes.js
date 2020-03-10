@@ -5,7 +5,7 @@ const Medication = require('../models/Medications.model')
 
 
 router.get('/', (req, res, next) => {
-    Medication.find({user: req.user._id})
+    Medication.find({yayo: req.user._id})
         .then(response => res.json(response))
         .catch(err => console.log(err))
 })
