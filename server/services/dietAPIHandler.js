@@ -6,9 +6,7 @@ class dietAPIHandler {
             baseURL: `https://test-es.edamam.com/`
         })
     }
-    getRecipe(diet) {
-        return axios.get(`https://test-es.edamam.com/search?q=&app_id=${process.env.idEdam}&app_key=${process.env.keyEdam}&diet=${diet}`)
-    }
+    getRecipe = diet => axios.get(`https://test-es.edamam.com/search?q=&app_id=${process.env.idEdam}&app_key=${process.env.keyEdam}&diet=${diet}`)
 }
 
 module.exports = dietAPIHandler

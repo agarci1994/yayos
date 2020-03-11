@@ -5,14 +5,22 @@ const Appointment = require('../models/Appointment.model')
 
 
 router.get('/all', (req, res, next) => {
-    Appointment.find({user: req.user._id})
-        .then(response => res.json(response))
-        .catch(err => console.log(err))
+        Appointment.find({
+                        user: req.user._id
+                })
+                .then(response => res.json(response))
+                .catch(err => console.log(err))
 })
 
 router.post('/new', (req, res, next) => {
-Appointment.create({description: req.body.description, day: req.body.date, time: req.body.time, user: req.user})
-        .catch(err => console.log(err))
+        Appointment.create({
+                        description: req.body.description,
+                        day: req.body.date,
+                        time: req.body.time,
+                        user: req.user
+                })
+                .then(response => res.json(response))
+                .catch(err => console.log(err))
 })
 
 

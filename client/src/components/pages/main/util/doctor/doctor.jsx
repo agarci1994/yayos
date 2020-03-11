@@ -24,7 +24,6 @@ class Doctor extends Component {
   }
 
   componentDidMount = () => {
-    const copyState = { ...this.state };
     this.medicalServices
       .searchAppointment(this.props.loggedInUser._id)
       .then(response => response.forEach(elm => this.setState({ ...elm })))
@@ -57,9 +56,13 @@ class Doctor extends Component {
       " de " +
       month[this.state.date.getMonth()] +
       " del " +
-      this.state.date.getFullYear();
+     this.state.date.getFullYear();
     this.setState({ hour: time });
-    this.medicalServices.saveMedical(this.state.text, date, time);
+    this.medicalServices.saveMedical(this.state.text, date, time)
+    .then(response => this.setState({...response}))
+    .catch(err => console.log(err))
+    this.setState({text: ""})
+    
   };
 
   handleChange = e => {
@@ -85,7 +88,7 @@ class Doctor extends Component {
                     className="input-doctor"
                     type="Text"
                     name="text"
-                    value={this.age}
+                    value={this.state.text}
                     onChange={this.handleChange}
                   />
                 </Col>
@@ -96,13 +99,12 @@ class Doctor extends Component {
                 </Col>
                 <Col md={12} className="space">
                   <h4>
-                    tu próxima cita es el {this.state.day} a las
-                    {this.state.time}
+                    tu próxima cita es el {this.state.day} a las {this.state.time}
                   </h4>
                   <p>Motivo: {this.state.description}</p>
                 </Col>
                 <Col md={12}>
-                  <img src="../../../../../../images/doctor.svg" />
+                  <img src="../../../../../../images/doctor.svg" alt="doctor" />
                 </Col>
               </Row>
             </Col>

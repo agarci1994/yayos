@@ -1,17 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "../../../../elements/buttom/mainButton";
 import "./ejercite.css";
 
-class Ejercite extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
 
-  render() {
+  const Ejercite = props => {
     return (
       <Container>
         <Row className="button-ejercite">
@@ -35,6 +30,5 @@ class Ejercite extends Component {
       </Container>
     );
   }
-}
 
 export default Ejercite;

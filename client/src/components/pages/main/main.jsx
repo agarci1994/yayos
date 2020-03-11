@@ -40,7 +40,7 @@ function chooseMain(props) {
       return (
         <>
           <Col xs={10} md={5} lg={5}>
-            <Button red className="buttonred" name="Emergencias" url="/" />
+            <Button red className="buttonred" name="Emergencias" url="/warming" />
           </Col>
           <Col xs={10} md={5} lg={5}>
             <Button purple className="button" name="Cuidadores" url="/" />

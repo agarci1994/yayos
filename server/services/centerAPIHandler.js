@@ -6,9 +6,8 @@ class centerAPIHandler {
             baseURL: `https://datos.madrid.es/egob/catalogo/200337-0-centros-mayores.json`
         })
     }
-    getCenter() {
-        return this.axiosApp.get(`/catalogo/200337-0-centros-mayores.json`)
-    }
+    getCenter = () => this.axiosApp.get(`/catalogo/200337-0-centros-mayores.json`)
+
 }
 
 module.exports = centerAPIHandler

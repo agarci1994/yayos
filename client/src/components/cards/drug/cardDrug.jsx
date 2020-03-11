@@ -16,7 +16,7 @@ class DrugForDay extends Component {
 
   componentWillReceiveProps() {
     const copyState = { ...this.state };
-    this.props.pilsForDay.map(elm => {
+    this.props.pilsForDay.forEach(elm => {
       elm.hours.includes("Morning") && copyState.morning.push(elm);
       elm.hours.includes("Afternoom") && copyState.afternoom.push(elm);
       elm.hours.includes("Night") && copyState.night.push(elm);
@@ -29,6 +29,7 @@ class DrugForDay extends Component {
       case "blue": return '../../../../images/pilsblue.png'
       case "White": return '../../../../images/pilswhite.png'
       case "yellow": return '../../../../images/pilsyellow.png'
+      default: return '../../../../images/pilswhite.png'
     }
   }
 
@@ -63,7 +64,7 @@ class DrugForDay extends Component {
                     <Col md={4} className="pils">
                       <div className="title-pils">
                       <h3 key={idx}>{elm.name}</h3>
-                      <img src={this.getColor(elm.color)} />
+                      <img src={this.getColor(elm.color)} alt={elm.name} />
                       </div>
                       <p>{elm.description}</p>
                       <p>Toma: {elm.quantityDay} pastilla</p>
@@ -75,7 +76,7 @@ class DrugForDay extends Component {
                     <Col md={4} className="pils">
                       <div className="title-pils">
                       <h3 key={idx}>{elm.name}}</h3>
-                      <img src={this.getColor(elm.color)} />
+                        <img src={this.getColor(elm.color)} alt={elm.name}/>
                       </div>
                       <p>{elm.description}</p>
                       <p>Toma: {elm.quantityDay} pastilla</p>
@@ -87,7 +88,7 @@ class DrugForDay extends Component {
                     <Col md={4} className="pils">
                       <div className="title-pils">
                       <h3 key={idx}>{elm.name}</h3>
-                      <img src={this.getColor(elm.color)} />
+                        <img src={this.getColor(elm.color)} alt={elm.name}/>
                       </div>
                       <p>{elm.description}</p>
                       <p>Toma: {elm.quantityDay} pastilla</p>

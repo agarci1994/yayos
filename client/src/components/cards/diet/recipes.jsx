@@ -2,7 +2,7 @@ import React from "react"
 import './food.css'
 
 const Recipes = props => {
-    let day
+let day
 switch (props.day){
     case 0:
     day = "Lunes"

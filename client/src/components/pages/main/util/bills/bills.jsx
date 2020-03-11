@@ -4,7 +4,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Calendar from "react-calendar";
 
 import "./bills.css";
 
@@ -18,7 +17,7 @@ class Bills extends Component {
     this.billsServices = new BillsServices();
   }
 
-  componentDidUpdate = () => {
+  componentDidMount = () => {
     const arrBills = [];
     this.billsServices
       .searchBills(this.props.loggedInUser._id)
@@ -31,7 +30,11 @@ class Bills extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    const copyBills = [...this.state.bills]
     this.billsServices.saveBills(this.state.dayPay, this.state.type)
+    .then(response => copyBills.push(response))
+    .then(() => this.setState({bills: copyBills}))
+    .catch(err => console.log(err))
   };
 
   handleChange = e => {
@@ -121,7 +124,7 @@ class Bills extends Component {
                 className="symbol"
                 onClick={() => this.delete(elm._id, idx)}
               >
-                <img src={this.getImg(elm.type)} />
+                <img src={this.getImg(elm.type)} alt={elm.type}/>
                 <h4>{elm.type}</h4>
                 <p> {this.getDays(elm.dayPay)} días para pagar.</p>
               </Col>

@@ -23,7 +23,7 @@ class Signup extends Component {
       recipe: "",
       role: []
     };
-    this.services = new AuthServices()
+    this.authServices = new AuthServices()
   }
 
   
@@ -37,7 +37,7 @@ class Signup extends Component {
   };
 
   postUser = () => {
-    this.services
+    this.authServices
       .signup(this.state)
       .then(theLoggedNewUser => {
         this.setState({

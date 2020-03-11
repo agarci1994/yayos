@@ -22,7 +22,7 @@ class Drug extends Component {
       Sunday: [],
       buy: []
     };
-    this.services = new DrugsServices();
+    this.drugsServices = new DrugsServices();
     this.dateOps = {
       weekday: "long",
       year: "numeric",
@@ -34,7 +34,7 @@ class Drug extends Component {
   componentDidMount = () => {
     const copyState = { ...this.state };
     const days = Object.keys(this.state);
-    this.services
+    this.drugsServices
       .searchDrug(this.props.loggedInUser._id)
       .then(response => {
         response.forEach(elm =>

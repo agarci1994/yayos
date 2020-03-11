@@ -29,7 +29,6 @@ class Diet extends Component {
     this.dietServices = new DietServices();
   }
 
-
   dietChange = (type) =>{
 
     this.setState({ diet: type });
@@ -39,6 +38,11 @@ class Diet extends Component {
 takeRecipes = () => {
  return this.state.recipe.length !== 1 && this.state.recipe.map((elm, idx) => <Recipes  key={idx} day={idx} breakfast={elm[idx].breakfast.name} lunch={elm[idx].lunch.name} dinner={elm[idx].dinner.name} />)}
 
+ search(){
+   this.dietServices.searchMain()
+   .then(response => this.setState({recipe: response.recipe}))
+   .catch(err => console.log(err))
+ }
 
 render() {
 return this.state.diet.length ? (
@@ -46,7 +50,7 @@ return this.state.diet.length ? (
       <Container>
          <article className="titleDiet">
          <h2>Tu menu de hoy es:</h2>
-         <div className="button" onClick={()=> this.dietServices.searchMain()}>
+         <div className="button" onClick={()=> this.search()}>
         Nueva Dieta
          </div>
           </article>

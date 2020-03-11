@@ -18,11 +18,12 @@ router.get('/main', (req, res, next) => {
     searchDiet.getRecipe(req.user.diet)
         .then(recipe => {
             let recipes = []
+            let breakfast, lunch, dinner, day
             for (let i = 0; i < 7; i++) {
-                let breakfast = Math.floor(Math.random() * recipe.data.hits.length)
-                let lunch = Math.floor(Math.random() * recipe.data.hits.length)
-                let dinner = Math.floor(Math.random() * recipe.data.hits.length)
-                let day = {
+                breakfast = Math.floor(Math.random() * recipe.data.hits.length)
+                lunch = Math.floor(Math.random() * recipe.data.hits.length)
+                dinner = Math.floor(Math.random() * recipe.data.hits.length)
+                day = {
                     [i]: {
                         breakfast: {
                             name: recipe.data.hits[breakfast].recipe.label,
@@ -45,7 +46,7 @@ router.get('/main', (req, res, next) => {
             })
 
         })
-        .then(x => console.log(x))
+        .then(response => res.json(response))
         .catch(err => console.log(err))
 })
 

@@ -12,11 +12,11 @@ class Navigation extends Component {
   constructor(props) {
     super(props)
     this.state = {}
-    this.services = new AuthServices()
+    this.authServices = new AuthServices()
   }
 
   logout = () => {
-    this.services
+    this.authServices
       .logout()
       .then(() => {
         this.props.setTheUser(false)

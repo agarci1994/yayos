@@ -10,7 +10,7 @@ import "./memory-module.css";
 
 const Text = styled.text`
   color: rgb(49, 49, 49);
-  text-align:center;
+  text-align: center;
   font-size: 1.1em;
   position: relative;
   display: block;
@@ -18,7 +18,7 @@ const Text = styled.text`
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.125);
   list-style: none;
-  width: 140%
+  width: 140%;
 `;
 
 class Memory extends Component {
@@ -29,7 +29,7 @@ class Memory extends Component {
       date: "",
       memory: props.loggedInUser.memory
     };
-    this.services = new MemoryServices();
+    this.memoryServices = new MemoryServices();
   }
 
   handleChange = e => {
@@ -40,7 +40,7 @@ class Memory extends Component {
   };
 
   postMemory = () => {
-    this.services
+    this.memoryServices
       .memory(this.state)
       .then(res => {
         this.props.setTheUser(res.user);
@@ -63,7 +63,11 @@ class Memory extends Component {
     this.postMemory();
   };
 
-  deleteList = () => this.services.delete(this.props.loggedInUser);
+  deleteList = () => {
+    this.memoryServices.delete(this.props.loggedInUser);
+    this.setState({memory: []});
+  };
+
 
   toggle = e =>
     e.target.classList.length < 3

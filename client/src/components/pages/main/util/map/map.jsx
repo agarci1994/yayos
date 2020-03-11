@@ -10,10 +10,6 @@ import CardMap from "../../../../cards/map/cardMap";
 import EventsServices from "../../../../../services/map.services";
 import "./maps.css";
 
-const mapStyles = {
-  width: "100%",
-  height: "1%"
-};
 
 class Events extends Component {
   constructor() {
@@ -24,7 +20,11 @@ class Events extends Component {
       showInfoWindow: false,
       infoWindows: []
     };
-    this.services = new EventsServices();
+    this.eventsServices = new EventsServices()
+    this.mapStyles = {
+      width: "100%",
+      height: "1%"
+    }
   }
 
   displayMarkers = (type, icon) => {
@@ -77,7 +77,7 @@ class Events extends Component {
   };
 
   getCenter = () => {
-    this.services
+    this.eventsServices
       .searchCenter()
       .then(center => {
         this.setState({ center });
@@ -86,7 +86,7 @@ class Events extends Component {
   };
 
   getEvents = () => {
-    this.services
+    this.eventsServices
       .searchCultural()
       .then(events => {
         this.setState({ events });
@@ -119,7 +119,7 @@ class Events extends Component {
             <Map
               google={this.props.google}
               zoom={15}
-              style={mapStyles}
+              style={this.mapStyles}
               initialCenter={{ lat: 40.4165001, lng: -3.7025599 }}
             >
               {this.displayMarkers("center", house)}
