@@ -96,7 +96,7 @@ class Doctor extends Component {
                 </Col>
                 <Col md={12} className="space">
                   <h4>
-                    tu próxima cita es el {this.state.day} a las{" "}
+                    tu próxima cita es el {this.state.day} a las
                     {this.state.time}
                   </h4>
                   <p>Motivo: {this.state.description}</p>

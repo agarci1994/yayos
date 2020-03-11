@@ -34,6 +34,7 @@ class Events extends Component {
           <Marker
             key={idx}
             id={idx}
+            data-type={type}
             position={{
               lat: elm.location.latitude,
               lng: elm.location.longitude
@@ -50,7 +51,7 @@ class Events extends Component {
     });
   };
 
-  displayInfoWindows = (type, icon) => {
+  displayInfoWindows = (type, icon, cb) => {
     const infoWindows = this.state[type].map((elm, idx) => {
       if (elm.location) {
         return (
@@ -70,7 +71,8 @@ class Events extends Component {
         );
       }
     });
-    this.setState({ infoWindows: infoWindows });
+
+    // this.setState({ infoWindows: infoWindows }, () => console.log(this.state));
     return infoWindows;
   };
 

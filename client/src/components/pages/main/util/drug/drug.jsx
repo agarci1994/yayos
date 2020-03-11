@@ -12,15 +12,23 @@ class Drug extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      Pils: [],
       Monday: [],
       Tuesday: [],
       Wednesday: [],
       Thuersday: [],
       Friday: [],
       Saturday: [],
-      Sunday: []
+      Sunday: [],
+      buy: []
     };
     this.services = new DrugsServices();
+    this.dateOps = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    };
   }
 
   componentDidMount = () => {
@@ -32,12 +40,27 @@ class Drug extends Component {
         response.forEach(elm =>
           days.forEach(day => elm.day.includes(day) && copyState[day].push(elm))
         );
-        this.setState({ ...copyState });
+
+        const buyPils = this.needPils(response);
+
+        this.setState({ ...copyState, Pils: response, buy: buyPils });
       })
       .catch(err => console.log(err));
   };
 
-  needPils() {}
+  needPils(response) {
+    const toDay = new Date();
+    const needPils = [];
+    response.forEach(elm => {
+      let total = elm.quantity - elm.quantityDay * 7;
+      let seconds = 1000 * 60 * 60 * 24 * total;
+      let sum = toDay.getTime() + seconds;
+      let newDate = new Date(sum);
+      needPils.push([elm.name, newDate]);
+    });
+    const buyPils = Object.fromEntries(needPils);
+    return buyPils;
+  }
 
   render() {
     const days = Object.keys(this.state);
@@ -102,7 +125,12 @@ class Drug extends Component {
         </div>
         <div className="title-drug">
           <h2>Tienes que comprar:</h2>
-          <p>Pastillas para la tensión</p>
+          {Object.keys(this.state.buy).map((elm, idx) => (
+            <p>
+              Tienes que comprar pastillas para la {elm} el{" "}
+              {this.state.buy[elm].toLocaleDateString("es-ES", this.dateOps)}
+            </p>
+          ))}
         </div>
       </Container>
     );

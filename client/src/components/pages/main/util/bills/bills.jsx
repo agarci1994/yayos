@@ -18,7 +18,7 @@ class Bills extends Component {
     this.billsServices = new BillsServices();
   }
 
-  componentDidMount = () => {
+  componentDidUpdate = () => {
     const arrBills = [];
     this.billsServices
       .searchBills(this.props.loggedInUser._id)
@@ -31,7 +31,7 @@ class Bills extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.billsServices.saveBills(this.state.dayPay, this.state.type);
+    this.billsServices.saveBills(this.state.dayPay, this.state.type)
   };
 
   handleChange = e => {
@@ -41,23 +41,35 @@ class Bills extends Component {
 
   getDays = dayPay => {
     let date1 = new Date();
-    let date2 = new Date(dayPay)
+    let date2 = new Date(dayPay);
     let differentDay = date2.getTime() - date1.getTime();
     let totalDays = Math.round(differentDay / (1000 * 60 * 60 * 24));
-    return totalDays > 0 ? "Tienes " + totalDays : "Han pasado " + Math.abs(totalDays)
+    return totalDays > 0
+      ? "Tienes " + totalDays
+      : "Han pasado " + Math.abs(totalDays);
   };
 
   getImg = type => {
-    switch (type){
-      case "Luz": return '../../../../../../images/idea.svg'
-      case "Gas": return '../../../../../../images/gas.svg'
-      case "Agua": return '../../../../../../images/agua.svg'
-      case "Internet": return '../../../../../../images/wifi.svg'
-      default: return '../../../../../../images/recibo.svg'
+    switch (type) {
+      case "Luz":
+        return "../../../../../../images/idea.svg";
+      case "Gas":
+        return "../../../../../../images/gas.svg";
+      case "Agua":
+        return "../../../../../../images/agua.svg";
+      case "Internet":
+        return "../../../../../../images/wifi.svg";
+      default:
+        return "../../../../../../images/recibo.svg";
     }
-  }
+  };
 
-  delete = id => this.billsServices.deleteBills(id)
+  delete = (id, idx) => {
+    this.billsServices.deleteBills(id);
+    const copy = [...this.state.bills];
+    copy.splice(idx, 1);
+    this.setState({ bills: copy });
+  };
 
   render() {
     return (
@@ -103,7 +115,12 @@ class Bills extends Component {
           </Row>
           <Row>
             {this.state.bills.map((elm, idx) => (
-              <Col md={4} key={idx} className="symbol" onClick={() => this.delete(elm._id)}>
+              <Col
+                md={4}
+                key={idx}
+                className="symbol"
+                onClick={() => this.delete(elm._id, idx)}
+              >
                 <img src={this.getImg(elm.type)} />
                 <h4>{elm.type}</h4>
                 <p> {this.getDays(elm.dayPay)} días para pagar.</p>
