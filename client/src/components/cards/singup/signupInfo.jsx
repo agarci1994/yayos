@@ -35,7 +35,7 @@ const CardRole = props => {
         <Form.Label>Yayo/a</Form.Label>
         <Form.Control
           type="text"
-          name="yayo"
+          name="user"
           value={props.yayo}
           onChange={props.handleChange}
         />

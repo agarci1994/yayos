@@ -1,42 +1,44 @@
-import React from "react"
-import './food.css'
+import React from "react";
+import "./food.css";
 
 const Recipes = props => {
-let day
-switch (props.day){
+  let day;
+  switch (props.day) {
     case 0:
-    day = "Lunes"
-    break;
+      day = "Lunes";
+      break;
     case 1:
-    day = "Martes"
-    break;
+      day = "Martes";
+      break;
     case 2:
-    day = "Miercoles"
-    break;
+      day = "Miercoles";
+      break;
     case 3:
-    day = "Jueves"
-    break;
+      day = "Jueves";
+      break;
     case 4:
-    day = "Viernes"
-    break;
+      day = "Viernes";
+      break;
     case 5:
-    day = "Sábado"
-    break;
+      day = "Sábado";
+      break;
     case 6:
-    day = "Domingo"
-    break;
+      day = "Domingo";
+      break;
     default:
-    day = "Extra"
-    break;
-}
-return (
-        <tr>
-              <td>{day}</td>
-              <td>{props.breakfast}</td>
-              <td>{props.lunch}</td>
-              <td>{props.dinner}</td>
-            </tr>
-)
+      day = "Extra";
+      break;
+  }
+  return (
+    <tr>
+      <td>{day}</td>
+      <td onClick={() => alert(props.ingredientsBreakfast)}>
+        {props.breakfast}
+      </td>
+      <td onClick={() => alert(props.ingredientsLunch)}>{props.lunch}</td>
+      <td onClick={() => alert(props.ingredientsDinner)}>{props.dinner}</td>
+    </tr>
+  );
 };
 
-export default Recipes
+export default Recipes;

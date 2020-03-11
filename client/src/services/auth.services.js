@@ -20,7 +20,8 @@ export default class Services {
     especiality,
     diet,
     recipe,
-    memory
+    memory,
+    phone
   }) =>
     this.service
       .post("/signup", {
@@ -35,7 +36,8 @@ export default class Services {
         especiality,
         diet,
         recipe,
-        memory
+        memory,
+        phone
       })
       .then(response => response.data)
       .catch(err => console.log(err))

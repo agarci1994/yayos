@@ -18,12 +18,13 @@ class Events extends Component {
       center: [],
       events: [],
       showInfoWindow: false,
-      infoWindows: []
+      infoWindows: [],
+      object: {lat: 12, lng:32}
     };
     this.eventsServices = new EventsServices()
     this.mapStyles = {
       width: "100%",
-      height: "1%"
+      height: "2.9%"
     }
   }
 
@@ -39,7 +40,6 @@ class Events extends Component {
               lat: elm.location.latitude,
               lng: elm.location.longitude
             }}
-            // NECESITO LLAMAR A ESTE ONCLICK DESDE EL HOVER DE LA LISTA (¿COMO SE PUDE HACER?)
             onClick={() => alert(elm.title)}
             icon={{
               url: icon,
@@ -49,31 +49,6 @@ class Events extends Component {
         );
       }
     });
-  };
-
-  displayInfoWindows = (type, icon, cb) => {
-    const infoWindows = this.state[type].map((elm, idx) => {
-      if (elm.location) {
-        return (
-          <InfoWindow
-            icon={{
-              url: icon,
-              scaledSize: new this.props.google.maps.Size(20, 25)
-            }}
-            position={{
-              lat: elm.location.latitude,
-              lng: elm.location.longitude
-            }}
-            visible={true}
-          >
-            <p>holi</p>
-          </InfoWindow>
-        );
-      }
-    });
-
-    // this.setState({ infoWindows: infoWindows }, () => console.log(this.state));
-    return infoWindows;
   };
 
   getCenter = () => {
@@ -103,14 +78,14 @@ class Events extends Component {
     const house = "../../../../../../images/residencia.svg";
     const cultural = "../../../../../../images/drama.svg";
     return (
-      <Container>
+      <div className="container-fluid margin">
         <Row>
           <Col xs={10} md={3} lg={3}>
             <h3 className="titleMap">Centros de mayores:</h3>
             <div className="listMap">
               <div className="center listMap">
                 {this.state.center.map((elm, idx) => (
-                  <CardMap key={idx} name={elm.title} url={elm.relation} />
+                  <CardMap key={idx} name={elm.title} url={elm.relation} addCenter={() => this.setState({ object: { lat: elm.location.latitude, lng: elm.location.longitude }})} />
                 ))}
               </div>
             </div>
@@ -120,13 +95,12 @@ class Events extends Component {
               google={this.props.google}
               zoom={15}
               style={this.mapStyles}
+              center={this.state.object}
               initialCenter={{ lat: 40.4165001, lng: -3.7025599 }}
             >
               {this.displayMarkers("center", house)}
-              {this.displayInfoWindows("center", house)}
-
               {this.displayMarkers("events", cultural)}
-              {this.displayInfoWindows("events", cultural)}
+
             </Map>
           </Col>
           <Col xs={10} md={3} lg={3}>
@@ -134,13 +108,13 @@ class Events extends Component {
             <div className="listMap">
               <div className="events listMap">
                 {this.state.events.map((elm, idx) => (
-                  <CardMap key={idx} name={elm.title} url={elm.link} />
+                  <CardMap key={idx} name={elm.title} url={elm.link} addCenter={() => this.setState({object: {lat: elm.location.latitude, lng: elm.location.longitude}})}/>
                 ))}
               </div>
             </div>
           </Col>
         </Row>
-      </Container>
+      </div>
     );
   }
 }

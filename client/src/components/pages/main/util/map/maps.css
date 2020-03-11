@@ -4,7 +4,7 @@
 
 .listMap {
     width: 100%;
-    height: 10%;
+    height: 16.5%;
     padding: 10px 20px;
     overflow: hidden;
     overflow-y: scroll;
@@ -18,4 +18,8 @@
 
 .listMap a{
   color: grey;
+}
+
+.margin{
+    margin: 50px
 }

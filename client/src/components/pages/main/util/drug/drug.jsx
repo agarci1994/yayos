@@ -38,7 +38,7 @@ class Drug extends Component {
       .searchDrug(this.props.loggedInUser._id)
       .then(response => {
         response.forEach(elm =>
-          days.forEach(day => elm.day.includes(day) && copyState[day].push(elm))
+days.forEach(day => elm.day.includes(day) && copyState[day].push(elm))
         );
 
         const buyPils = this.needPils(response);

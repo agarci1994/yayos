@@ -25,6 +25,8 @@ import Brain from "./components/pages/main/util/ejercite/memory/ejerciteMemory"
 import Sport from "./components/pages/main/util/ejercite/sport/ejerciteSport"
 import Doctor from "./components/pages/main/util/doctor/doctor"
 import Bills from "./components/pages/main/util/bills/bills"
+import Grandmother from "./components/pages/main/mainGrandmother/mainGrandmother"
+
 
 
 
@@ -196,6 +198,15 @@ class App extends Component {
               path="/bills"
               render={() => this.state.loggedInUser ? (
                 <Bills loggedInUser={this.state.loggedInUser} />
+              ) : (
+                  <Redirect to="/" />
+                )
+              }
+            />
+            <Route
+              path="/yayos"
+              render={() => this.state.loggedInUser ? (
+                <Grandmother loggedInUser={this.state.loggedInUser} />
               ) : (
                   <Redirect to="/" />
                 )

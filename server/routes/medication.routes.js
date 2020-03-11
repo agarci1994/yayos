@@ -10,6 +10,14 @@ router.get('/', (req, res, next) => {
         .catch(err => console.log(err))
 })
 
+router.get('/grandmother', (req, res, next) => {
+    Medication.find({
+            user: req.body._id
+        })
+        .then(response => res.json(response))
+        .catch(err => console.log(err))
+})
+
 
 router.post('/new', (req, res, next) => {
     Medication.create(req.body)

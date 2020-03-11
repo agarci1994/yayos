@@ -4,8 +4,8 @@ import React from "react"
 const CardMap = props => {
     return (
      <a href={props.url}>
-        <p>{props.name}</p>
-     </a>
+        <p onMouseEnter={() => props.addCenter()}>{props.name}</p>
+    </a>
     )
 };
 

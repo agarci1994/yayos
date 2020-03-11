@@ -23,6 +23,8 @@ app.use('/api/events', require('./routes/events.routes'))
 app.use('/api/medical', require('./routes/medical.routes'))
 app.use('/api/bills', require('./routes/bills.routes'))
 app.use('/api/profile', require('./routes/profile.routes'))
+app.use('/api/info', require('./routes/infoGrandmother.routes'))
+
 
 
 app.use((req, res) => {

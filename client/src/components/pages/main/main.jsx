@@ -46,7 +46,7 @@ function chooseMain(props) {
             <Button purple className="button" name="Cuidadores" url="/" />
           </Col>
           <Col xs={10} md={5} lg={10}>
-            <Button orange className="button" name="Yayos" url="/" />
+            <Button orange className="button" name="Yayos" url="/yayos" />
           </Col>
         </>
       );

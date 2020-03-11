@@ -36,7 +36,7 @@ class Diet extends Component {
 }
 
 takeRecipes = () => {
- return this.state.recipe.length !== 1 && this.state.recipe.map((elm, idx) => <Recipes  key={idx} day={idx} breakfast={elm[idx].breakfast.name} lunch={elm[idx].lunch.name} dinner={elm[idx].dinner.name} />)}
+  return this.state.recipe.length !== 1 && this.state.recipe.map((elm, idx) => <Recipes key={idx} day={idx} breakfast={elm[idx].breakfast.name} ingredientsBreakfast={elm[idx].breakfast.ingredients} lunch={elm[idx].lunch.name} ingredientsLunch={elm[idx].lunch.ingredients} dinner={elm[idx].dinner.name} ingredientsDinner={elm[idx].dinner.ingredients} />)}
 
  search(){
    this.dietServices.searchMain()
