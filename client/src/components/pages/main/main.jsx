@@ -1,9 +1,10 @@
-import React from "react"
-import Button from "../../elements/buttom/mainButton"
-import Container from "react-bootstrap/Container"
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
-import "./main-module.css"
+import React from "react";
+import Button from "../../elements/buttom/mainButton";
+import Doctor from "./mainDoctor/mainDoctor";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import "./main-module.css";
 
 function chooseMain(props) {
   switch (props.loggedInUser.role[0]) {
@@ -29,7 +30,12 @@ function chooseMain(props) {
             <Button blue className="button" name="Medico" url="/medical" />
           </Col>
           <Col xs={10} md={5} lg={3}>
-            <Button purple className="button" name="Ejercicios" url="/ejercite" />
+            <Button
+              purple
+              className="button"
+              name="Ejercicios"
+              url="/ejercite"
+            />
           </Col>
           <Col xs={10} md={5} lg={3}>
             <Button pink className="button" name="Actividades" url="/event" />
@@ -40,7 +46,12 @@ function chooseMain(props) {
       return (
         <>
           <Col xs={10} md={5} lg={5}>
-            <Button red className="buttonred" name="Emergencias" url="/warming" />
+            <Button
+              red
+              className="buttonred"
+              name="Emergencias"
+              url="/warming"
+            />
           </Col>
           <Col xs={10} md={5} lg={5}>
             <Button purple className="button" name="Cuidadores" url="/" />
@@ -53,7 +64,7 @@ function chooseMain(props) {
     case "Doctor":
       return (
         <>
-          <h1>Hola Doctor</h1>
+          <Doctor />
         </>
       );
     case "Auxiliary":
@@ -78,19 +89,18 @@ function chooseMain(props) {
         </>
       );
     default:
-      return <h1>registrate</h1>
+      return <h1>registrate</h1>;
   }
 }
 
 const myIndex = props => {
-  
   return (
     <Container>
       <main className="mainButton">
         <Row>{chooseMain(props)}</Row>
       </main>
     </Container>
-  )
-}
+  );
+};
 
-export default myIndex
+export default myIndex;
