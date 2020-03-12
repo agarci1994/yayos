@@ -40,7 +40,12 @@ class MainGrandmother extends Component {
         <Row>
           <Col md={12}>
             <Tabs defaultActiveKey="recipe" id="uncontrolled-tab-example">
-              {this.arrKey.map((elm, idx) => (
+              {this.arrKey.map((elm, idx) => 
+                elm === "historial" ? (
+                  <Tab eventKey={elm} key={idx} title={elm}>
+                    <CardMain sick={this.state.sick} alergy={this.state.alergy} name={elm} />
+                  </Tab>
+                ) : (
                 <Tab eventKey={elm} key={idx} title={elm}>
                   <CardMain info={this.state[elm]} name={elm} />
                 </Tab>

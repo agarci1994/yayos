@@ -7,8 +7,12 @@ const CardDoctor = props => {
     console.log(props)
     return (
         <Row>
-            <Col>
-                MANOLO TE VEO
+            <Col className="info-doctor">
+                <h2>Informe médico:</h2>
+                <p>Alergias reconocidas:</p>
+                <p>{props.alergy}</p>
+                <p>Enfermedad:</p>
+                <p>{props.sick}</p>
             </Col>
         </Row>
     )

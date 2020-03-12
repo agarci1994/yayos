@@ -5,23 +5,22 @@ import CardRecipe from './util/recipe'
 import CardMemory from './util/memory'
 import CardDrug from "./util/drugs";
 import CardDoctor from "./util/doctor";
+import './card-main.css'
 
 
-
-const typeCard = (name, info) => {
+const typeCard = (name, info, sick, alergy) => {  
     switch(name){
 case "recipe": return <CardRecipe info={info} /> 
 case "memory": return <CardMemory info={info}/>
 case "drugs": return <CardDrug info={info} />
-case "historial": return <CardDoctor info={info} /> 
+case "historial": return <CardDoctor sick={sick} alergy={alergy} /> 
 }}
 
 const CardMain = props => {
-    console.log(props)
     return (
         <Row>
             <Col>
-            {typeCard(props.name, props.info)}
+            {typeCard(props.name, props.info, props.sick, props.alergy)}
             </Col>
         </Row>
     )

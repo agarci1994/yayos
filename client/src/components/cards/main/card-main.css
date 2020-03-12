@@ -1,0 +1,22 @@
+.info-doctor {
+    margin: 100px;
+    text-align: center;
+    font-family: "Consolas",
+    monospace;
+}
+
+.info-doctor h2{
+    font-size: 3em;
+    font-weight: 900;
+}
+
+.info-doctor p {
+    font-size: 2em;
+    font-weight: 100;
+}
+
+.info-drug{
+    margin: 100px;
+    text-align: center;
+ line-height: 10px;
+}
