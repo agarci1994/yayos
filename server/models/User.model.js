@@ -16,7 +16,9 @@ const userSchema = new Schema({
   user: String,
   diet: String,
   recipe: Array,
-  memory: [Object]
+  memory: [Object],
+  alergy: String,
+  sick: String
 }, {
   timestamps: {
     createdAt: 'created_at',

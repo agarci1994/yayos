@@ -24,71 +24,75 @@ class DrugForDay extends Component {
     this.setState({ ...copyState });
   }
 
-  getColor(color){
-    switch(color){
-      case "blue": return '../../../../images/pilsblue.png'
-      case "White": return '../../../../images/pilswhite.png'
-      case "yellow": return '../../../../images/pilsyellow.png'
-      default: return '../../../../images/pilswhite.png'
+  getColor(color) {
+    switch (color) {
+      case "blue":
+        return "../../../../images/pilsblue.png";
+      case "White":
+        return "../../../../images/pilswhite.png";
+      case "yellow":
+        return "../../../../images/pilsyellow.png";
+      default:
+        return "../../../../images/pilswhite.png";
     }
   }
 
   render() {
     return (
       <>
-      <Tab.Container id="left-tabs-example" defaultActiveKey="morning">
-        <Row className="tab-hours">
-          <Col sm={12}>
-            <Nav variant="pills" className="flex-row justify-content-around">
-              <Nav.Item>
-                <Nav.Link eventKey="morning" className="nav-green">
-                  <p>Mañana</p>
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="afternoom" className="nav-green">
-                  <p>Tarde</p>
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="night" className="nav-green">
-                  <p>Noche</p>
-                </Nav.Link>
-              </Nav.Item>
-            </Nav>
-          </Col>
-          <Col sm={12}>
+        <Tab.Container id="left-tabs-example" defaultActiveKey="morning">
+          <Row className="tab-hours">
+            <Col sm={12}>
+              <Nav variant="pills" className="flex-row justify-content-around">
+                <Nav.Item>
+                  <Nav.Link eventKey="morning" className="nav-green">
+                    <p>Mañana</p>
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="afternoom" className="nav-green">
+                    <p>Tarde</p>
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="night" className="nav-green">
+                    <p>Noche</p>
+                  </Nav.Link>
+                </Nav.Item>
+              </Nav>
+            </Col>
+            <Col sm={12}>
               <Tab.Content className="big-box">
                 <Tab.Pane eventKey="morning" className="row d-flex box1">
                   {this.state.morning.map((elm, idx) => (
                     <Col md={4} className="pils">
                       <div className="title-pils">
-                      <h3 key={idx}>{elm.name}</h3>
-                      <img src={this.getColor(elm.color)} alt={elm.name} />
+                        <h3 key={idx}>{elm.name}</h3>
+                        <img src={this.getColor(elm.color)} alt={elm.name} />
                       </div>
                       <p>{elm.description}</p>
                       <p>Toma: {elm.quantityDay} pastilla</p>
                     </Col>
                   ))}
                 </Tab.Pane>
-              <Tab.Pane eventKey="afternoom" className="row d-flex box2">
+                <Tab.Pane eventKey="afternoom" className="row d-flex box2">
                   {this.state.afternoom.map((elm, idx) => (
                     <Col md={4} className="pils">
                       <div className="title-pils">
-                      <h3 key={idx}>{elm.name}}</h3>
-                        <img src={this.getColor(elm.color)} alt={elm.name}/>
+                        <h3 key={idx}>{elm.name}}</h3>
+                        <img src={this.getColor(elm.color)} alt={elm.name} />
                       </div>
                       <p>{elm.description}</p>
                       <p>Toma: {elm.quantityDay} pastilla</p>
                     </Col>
                   ))}
                 </Tab.Pane>
-              <Tab.Pane eventKey="night" className="row d-flex box3">
+                <Tab.Pane eventKey="night" className="row d-flex box3">
                   {this.state.night.map((elm, idx) => (
                     <Col md={4} className="pils">
                       <div className="title-pils">
-                      <h3 key={idx}>{elm.name}</h3>
-                        <img src={this.getColor(elm.color)} alt={elm.name}/>
+                        <h3 key={idx}>{elm.name}</h3>
+                        <img src={this.getColor(elm.color)} alt={elm.name} />
                       </div>
                       <p>{elm.description}</p>
                       <p>Toma: {elm.quantityDay} pastilla</p>
@@ -96,9 +100,9 @@ class DrugForDay extends Component {
                   ))}
                 </Tab.Pane>
               </Tab.Content>
-          </Col>
-        </Row>
-      </Tab.Container>
+            </Col>
+          </Row>
+        </Tab.Container>
       </>
     );
   }
