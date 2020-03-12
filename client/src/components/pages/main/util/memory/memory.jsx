@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import styled from "styled-components";
+import { Link } from "react-router-dom"
 import "./memory-module.css";
 
 const Text = styled.text`
@@ -77,6 +78,11 @@ class Memory extends Component {
   render() {
     return (
       <Container className="memoryForm">
+        <div className="button-back">
+          <Button as="div" variant="dark" size="sm">
+            <Link to="/main">Volver</Link>
+          </Button>
+        </div>
         <Row>
           <Col md={12}>
             <Row className="justify-content-between">

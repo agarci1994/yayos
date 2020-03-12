@@ -6,6 +6,8 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Table from "react-bootstrap/Table"
+import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom"
 import './diet-module.css'
 
 
@@ -48,6 +50,11 @@ render() {
 return this.state.diet.length ? (
     <div>
       <Container>
+      <div className="button-back">
+        <Button as="div" variant="dark" size="sm">
+          <Link to="/main">Volver</Link>
+        </Button>
+      </div>
          <article className="titleDiet">
          <h2>Tu menu de hoy es:</h2>
          <div className="button" onClick={()=> this.search()}>

@@ -6,6 +6,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
+import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom"
 import "./drug-module.css";
 
 class Drug extends Component {
@@ -66,11 +68,16 @@ days.forEach(day => elm.day.includes(day) && copyState[day].push(elm))
     const days = Object.keys(this.state);
     return (
       <Container>
+        <div className="button-back">
+          <Button as="div" variant="dark" size="sm">
+            <Link to="/main">Volver</Link>
+          </Button>
+        </div>
         <div className="title-drug">
           <h1>Tu pastillero:</h1>
         </div>
         <div className="tab-pils">
-          <Tab.Container id="left-tabs-example" defaultActiveKey="Monday">
+          <Tab.Container id="days" defaultActiveKey="Monday">
             <Row>
               <Col sm={2}>
                 <Nav variant="pills" className="flex-column">
@@ -113,11 +120,13 @@ days.forEach(day => elm.day.includes(day) && copyState[day].push(elm))
               </Col>
               <Col sm={9}>
                 {days.map((elm, idx) => (
+                 
                   <Tab.Content key={idx}>
                     <Tab.Pane eventKey={elm}>
                       <CardDrug pilsForDay={this.state[elm]} />
                     </Tab.Pane>
                   </Tab.Content>
+                 
                 ))}
               </Col>
             </Row>
@@ -127,8 +136,7 @@ days.forEach(day => elm.day.includes(day) && copyState[day].push(elm))
           <h2>Tienes que comprar:</h2>
           {Object.keys(this.state.buy).map((elm, idx) => (
             <p>
-              Tienes que comprar pastillas para la {elm} el{" "}
-              {this.state.buy[elm].toLocaleDateString("es-ES", this.dateOps)}
+              Tienes que comprar pastillas para la {elm} el {this.state.buy[elm].toLocaleDateString("es-ES", this.dateOps)}
             </p>
           ))}
         </div>

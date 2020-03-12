@@ -41,7 +41,7 @@ router.get('/main', (req, res, next) => {
                 }
                 recipes.push(day)
             }
-            return medi.findByIdAndUpdate(req.user._id, {
+            return User.findByIdAndUpdate(req.user._id, {
                 recipe: recipes
             })
 

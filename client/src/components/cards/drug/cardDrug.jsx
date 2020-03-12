@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
+import { useState } from "react";
 
 class DrugForDay extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class DrugForDay extends Component {
     this.state = {
       morning: [],
       afternoom: [],
-      night: []
+      night: [],
     };
   }
 
@@ -21,6 +22,7 @@ class DrugForDay extends Component {
       elm.hours.includes("Afternoom") && copyState.afternoom.push(elm);
       elm.hours.includes("Night") && copyState.night.push(elm);
     });
+
     this.setState({ ...copyState });
   }
 
@@ -40,7 +42,10 @@ class DrugForDay extends Component {
   render() {
     return (
       <>
-        <Tab.Container id="left-tabs-example" defaultActiveKey="morning">
+        <Tab.Container
+          id="left-tabs-example"
+          defaultActiveKey="morning"
+        >
           <Row className="tab-hours">
             <Col sm={12}>
               <Nav variant="pills" className="flex-row justify-content-around">

@@ -34,8 +34,7 @@ router.post("/add", (req, res, next) => {
             description: req.body.description,
             hours: req.body.hours,
             day: req.body.day,
-            color: req.body.colo
-
+            color: req.body.color
         })
         .then(response => res.json(response))
         .catch(err => console.log(err))

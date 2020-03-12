@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom"
 
 import "./bills.css";
 
@@ -77,6 +78,11 @@ class Bills extends Component {
   render() {
     return (
       <Container>
+        <div className="button-back">
+        <Button as="div" variant="dark" size="sm">
+          <Link to="/main">Volver</Link>
+        </Button>
+        </div>
         <Form onSubmit={e => this.handleSubmit(e)}>
           <Row>
             <Col md={12}>

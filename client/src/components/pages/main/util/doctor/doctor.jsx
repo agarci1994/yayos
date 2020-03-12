@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import DoctorServices from "../../../../../services/appointment.services";
+import { Link } from "react-router-dom"
 
 import Calendar from "react-calendar";
 import "./doctor.css";
@@ -73,6 +74,11 @@ class Doctor extends Component {
   render() {
     return (
       <Container>
+        <div className="button-back">
+          <Button as="div" variant="dark" size="sm">
+            <Link to="/main">Volver</Link>
+          </Button>
+        </div>
         <Row className="date-doctor">
           <Form className="form-doctor" onSubmit={e => this.handleSubmit(e)}>
             <Col md={12}>

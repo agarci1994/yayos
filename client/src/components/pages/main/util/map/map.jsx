@@ -4,7 +4,8 @@ import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
+import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom"
 import CardMap from "../../../../cards/map/cardMap";
 
 import EventsServices from "../../../../../services/map.services";
@@ -79,6 +80,11 @@ class Events extends Component {
     const cultural = "../../../../../../images/drama.svg";
     return (
       <div className="container-fluid margin">
+        <div className="button-back">
+          <Button as="div" variant="dark" size="sm">
+            <Link to="/main">Volver</Link>
+          </Button>
+        </div>
         <Row>
           <Col xs={10} md={3} lg={3}>
             <h3 className="titleMap">Centros de mayores:</h3>
