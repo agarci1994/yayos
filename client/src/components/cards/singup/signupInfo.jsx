@@ -64,6 +64,26 @@ const CardRole = props => {
     default: return <h1>Antes elige tu rol</h1>
   }}
 
+  function identifyImg(props) {
+    switch (props.role[0]) {
+      case 'Yayo':
+        return <Col xs={12} md={1}>
+          <img className="img-signup" src="./../../../../images/standing-12.png" alt="Yayo"></img>
+        </Col>
+      case "Family":
+        return <Col xs={12} md={1}>
+          <img className="img-signup" src="./../../../../images/standing-5.png" alt="Family"></img>
+        </Col>
+      case "Doctor":
+        return <Col xs={12} md={1}>
+          <img className="img-signup" src="./../../../../images/standing-17.png" alt="Doctor"></img>
+        </Col>
+      case "Auxiliary":
+        return
+      default: return <h1>Antes elige tu rol</h1>
+    }
+  }
+
 
 
   return (
@@ -127,9 +147,7 @@ const CardRole = props => {
                 Registrarse
               </Button>
             </Col>
-            <Col xs={12} md={1}>
-              <img src="./../../../../images/standing-12.png" alt="Yayo"></img>
-            </Col>
+          {identifyImg(props)}
           </Row>
         </Form>
       </Container>

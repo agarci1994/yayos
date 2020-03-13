@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
-
-import Container from "react-bootstrap/Container";
+import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";

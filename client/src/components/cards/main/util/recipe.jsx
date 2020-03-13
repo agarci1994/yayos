@@ -1,6 +1,4 @@
 import React from "react"
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
 
 import Recipes from '../../diet/recipes'

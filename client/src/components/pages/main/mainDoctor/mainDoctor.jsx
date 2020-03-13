@@ -176,7 +176,7 @@ class Doctor extends Component {
                     <Button variant="dark" type="submit">
                       Actualizar
                     </Button>
-                    <img src="../../../../../images/doctor.png" />
+                    <img src="../../../../../images/doctor.png" alt="doctor"/>
                   </Form>
                 </Col>
                 <Col md={6}>

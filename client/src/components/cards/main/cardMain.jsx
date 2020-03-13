@@ -14,6 +14,7 @@ case "recipe": return <CardRecipe info={info} />
 case "memory": return <CardMemory info={info}/>
 case "drugs": return <CardDrug info={info} />
 case "historial": return <CardDoctor sick={sick} alergy={alergy} /> 
+default: return <h1>No hay información</h1>
 }}
 
 const CardMain = props => {

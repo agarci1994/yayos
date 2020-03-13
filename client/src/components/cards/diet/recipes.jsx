@@ -5,9 +5,9 @@ import "./food.css";
 
 const Recipes = props => {
   let day;
-  const [modalShow, setModalShow] = React.useState(false);
-  const [recipe, setRecipe] = React.useState();
-  const [ingredients, setIngredients] = React.useState();
+  const [modalShow, setModalShow] = useState(false);
+  const [recipe, setRecipe] = useState();
+  const [ingredients, setIngredients] = useState();
 
   const close = () => {
     setModalShow(false);
