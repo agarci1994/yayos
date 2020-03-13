@@ -51,13 +51,13 @@ return this.state.diet.length ? (
     <div>
       <Container>
       <div className="button-back">
-        <Button as="div" variant="dark" size="sm">
+        <Button as="div" variant="light" size="sm">
           <Link to="/main">Volver</Link>
         </Button>
       </div>
          <article className="titleDiet">
          <h2>Tu menu de hoy es:</h2>
-         <div className="button" onClick={()=> this.search()}>
+         <div className="button new-recipe" onClick={()=> this.search()}>
         Nueva Dieta
          </div>
           </article>

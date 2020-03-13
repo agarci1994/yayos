@@ -5,6 +5,8 @@ import Col from "react-bootstrap/Col";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import DrugsServices from "../../../../services/drugs.services";
+import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom"
 import CardMain from "../../../cards/main/cardMain";
 import "./main-grandmother.css";
 
@@ -34,9 +36,13 @@ class MainGrandmother extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <Container>
+        <div className="button-back">
+          <Button as="div" variant="light" size="sm">
+            <Link to="/main" className="no-underline">Volver</Link>
+          </Button>
+        </div>
         <Row>
           <Col md={12}>
             <Tabs defaultActiveKey="recipe" id="uncontrolled-tab-example">

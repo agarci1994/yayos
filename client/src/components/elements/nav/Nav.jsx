@@ -28,18 +28,18 @@ class Navigation extends Component {
     return this.props.loggedInUser ? (
       <Navbar expand="lg" className="general-nav">
           <Navbar.Brand>
-              <Link to="/"> <p>YAYOS</p> </Link>
+          <Link to="/" className="no-underline"> <p>YAYOS</p> </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
               <Nav.Link as="div">
-                <Link to="/main"><p>Inicio</p></Link>
+              <Link to="/main" className="no-underline"><p>Inicio</p></Link>
               </Nav.Link>
-              <Nav.Link as="div">
-                <Link to="/profile"><p>Perfil</p></Link>
-              </Nav.Link>
-              <Nav.Link onClick={this.logout}><p>Cerrar sesión</p></Nav.Link>
+              {/* <Nav.Link as="div">
+              <Link to="/profile" className="no-underline"><p>Perfil</p></Link>
+              </Nav.Link> */}
+            <Nav.Link onClick={this.logout}><p>Cerrar sesión</p></Nav.Link>
             </Nav>
           </Navbar.Collapse>
       </Navbar>

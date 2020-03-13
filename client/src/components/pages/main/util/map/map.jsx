@@ -81,7 +81,7 @@ class Events extends Component {
     return (
       <div className="container-fluid margin">
         <div className="button-back">
-          <Button as="div" variant="dark" size="sm">
+          <Button as="div" variant="light" size="sm">
             <Link to="/main">Volver</Link>
           </Button>
         </div>

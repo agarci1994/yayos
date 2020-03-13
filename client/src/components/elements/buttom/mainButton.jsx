@@ -32,7 +32,7 @@ const Button = props => {
 
     
     return (
-            <Link to={props.url}>
+            <Link to={props.url} className="no-underline">
         <div className={`button ${className}`}>
             <p>{props.name}</p>
         </div>

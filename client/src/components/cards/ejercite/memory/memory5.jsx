@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
 
 import "./ejerciteMemory.css";
 
@@ -11,6 +12,8 @@ class Memory5 extends Component {
   constructor() {
     super();
     this.state = {
+      modalShow: false,
+      result: "",
       number1: "",
       number2: "",
       numberUser: 0,
@@ -18,9 +21,17 @@ class Memory5 extends Component {
     };
   }
 
+  open(result) {
+    this.setState({ result, modalShow: true});
+  }
+
+  close() {
+    this.setState({ modalShow: false });
+  }
+
   handleSubmit = e => {
     e.preventDefault(e);
-    this.state.number1 * this.state.number2 == this.state.numberUser ? this.genereteNumber() : alert("mal")
+    this.state.number1 * this.state.number2 == this.state.numberUser ? this.genereteNumber() : this.open("Has fallado")
   };
 
   handleChange = e => {
@@ -42,6 +53,21 @@ class Memory5 extends Component {
   render() {
     return (
       <Container>
+        <Modal
+          show={this.state.modalShow}
+          size="lg"
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+        >
+          <Modal.Header>
+            <Modal.Title id="contained-modal-title-vcenter">
+              <h2>{this.state.result}</h2>
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Footer>
+            <Button onClick={() => this.close()}>Close</Button>
+          </Modal.Footer>
+        </Modal>
         <Form onSubmit={e => this.handleSubmit(e)}>
           <Row className="jutify-content-bentween">
             <Col md={12} className="centerGame">

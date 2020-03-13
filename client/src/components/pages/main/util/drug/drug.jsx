@@ -69,7 +69,7 @@ days.forEach(day => elm.day.includes(day) && copyState[day].push(elm))
     return (
       <Container>
         <div className="button-back">
-          <Button as="div" variant="dark" size="sm">
+          <Button as="div" variant="light" size="sm">
             <Link to="/main">Volver</Link>
           </Button>
         </div>

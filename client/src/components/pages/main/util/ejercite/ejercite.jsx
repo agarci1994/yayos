@@ -12,7 +12,7 @@ import "./ejercite.css";
     return (
       <Container>
         <div className="button-back">
-          <Button as="div" variant="dark" size="sm">
+          <Button as="div" variant="light" size="sm">
             <Link to="/main">Volver</Link>
           </Button>
         </div>

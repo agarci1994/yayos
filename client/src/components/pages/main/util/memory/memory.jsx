@@ -79,7 +79,7 @@ class Memory extends Component {
     return (
       <Container className="memoryForm">
         <div className="button-back">
-          <Button as="div" variant="dark" size="sm">
+          <Button as="div" variant="light" size="sm">
             <Link to="/main">Volver</Link>
           </Button>
         </div>

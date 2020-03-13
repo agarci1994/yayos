@@ -4,24 +4,27 @@
     margin: 20px;
     padding: 100px 120px 100px 120px;
     border-radius: 15%;
-    -webkit-box-shadow: 15px 18px 21px -3px rgba(105, 105, 105, 0.34);
-    -moz-box-shadow: 15px 18px 21px -3px rgba(105, 105, 105, 0.34);
-    box-shadow: 15px 18px 21px -3px rgba(105, 105, 105, 0.34);
+    -webkit-box-shadow: 15px 18px 21px -3px rgba(163, 163, 163, 0.34);
+    -moz-box-shadow: 15px 18px 21px -3px rgba(163, 163, 163, 0.34);
+    box-shadow: 15px 18px 21px -3px rgba(163, 163, 163, 0.34);
 }
-.emergency{
-    background-color: #FA6868;
+
+.emergency {
+    background-color: rgb(248, 132, 132);
     color: rgb(49, 49, 49);
     font-size: 3em;
     text-decoration: none;
     border-radius: 3%
 }
+
 .family {
-    background-color: #FFF96A;
+    background-color: rgb(250, 246, 137);
     color: rgb(49, 49, 49);
     font-size: 3em;
     text-decoration: none;
     border-radius: 3%
 }
+
 .button p {
     text-align: center;
     text-decoration: none;
@@ -29,42 +32,57 @@
     font-weight: 500;
     text-transform: uppercase;
 }
- .warming p, .diet p, .memory p, .pills p{
+
+.warming p,
+.diet p,
+.memory p,
+.pills p {
     color: #494949
 }
 
- .paper p, .doctor p, .ejercite p, .activity p{
+.paper p,
+.doctor p,
+.ejercite p,
+.activity p {
     color: #f5f5f5
 }
 
 .warming {
-    background-color: #FF7C7C;
+    background-color: rgb(250, 133, 133);
 }
 
 .diet {
-    background-color: #FABA0D;
+    background-color: rgb(255, 207, 75);
 }
 
 .memory {
-    background-color: #FFF143;
+    background-color: rgb(248, 238, 93);
 }
 
 .pills {
-    background-color: #BCFF50;
+    background-color: rgb(197, 252, 110);
 }
 
 .paper {
-    background-color: rgb(41, 185, 238);
+    background-color: rgb(115, 213, 248);
 }
 
 .doctor {
-    background-color: #4B67FF;
+    background-color: rgb(110, 132, 253);
 }
 
 .ejercite {
-    background-color: #C136FF;
+    background-color: rgb(213, 123, 255);
 }
 
 .activity {
-    background-color: #FF5DAE;
+    background-color: rgb(255, 130, 192);
+}
+
+.noUnderline:hover{
+    text-decoration: none;
+}
+
+p:hover {
+    text-decoration: none;
 }

@@ -7,10 +7,9 @@ import Memory2 from '../../../../../cards/ejercite/memory/memory2'
 import Memory3 from '../../../../../cards/ejercite/memory/memory3'
 import Memory4 from '../../../../../cards/ejercite/memory/memory4'
 import Memory5 from '../../../../../cards/ejercite/memory/memory5'
-import Memory6 from '../../../../../cards/ejercite/memory/memory6'
 
 
-const train = [Memory1, Memory2, Memory3, Memory4, Memory5, Memory6]
+const train = [Memory1, Memory2, Memory3, Memory4, Memory5]
 let DynamicComponent
 
 const Memory = () => {
