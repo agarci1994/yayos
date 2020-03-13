@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
+import { Link } from "react-router-dom"
 import "./signup-role-module.css"
 
 const CardRole = props => {
@@ -39,6 +40,7 @@ const CardRole = props => {
           value={props.yayo}
           onChange={props.handleChange}
         />
+        {props.showUser && <p className="text-err">{props.messageUser}</p>}
       </Form.Group>
       <Form.Group>
         <Form.Label>Telefono</Form.Label>
@@ -87,6 +89,12 @@ const CardRole = props => {
 
 
   return (
+    <>
+    <div className="button-back margin">
+      <Button as="div" variant="light" size="sm" >
+        <Link to="/main">Volver</Link>
+      </Button>
+    </div>
     <div className="roles">
       <Container>
         <h3>Registrate:</h3>
@@ -100,7 +108,8 @@ const CardRole = props => {
                   name="username"
                   value={props.username}
                   onChange={props.handleChange}
-                />
+                  /> 
+                  {props.showUsername && <p className="text-err">{props.messageUsername}</p>}
               </Form.Group>
               <Form.Group>
                 <Form.Label>Contraseña</Form.Label>
@@ -110,6 +119,7 @@ const CardRole = props => {
                   value={props.password}
                   onChange={props.handleChange}
                 />
+                  {props.showPassword && <p className="text-err">{props.messagePassword}</p>}
               </Form.Group>
             </Col>
             <Col xs={12} md={4}>
@@ -121,6 +131,7 @@ const CardRole = props => {
                   value={props.name}
                   onChange={props.handleChange}
                 />
+                  {props.showName && <p className="text-err">{props.messageName}</p>}
               </Form.Group>
               <Form.Group>
                 <Form.Label>Apellidos</Form.Label>
@@ -152,6 +163,7 @@ const CardRole = props => {
         </Form>
       </Container>
     </div>
+    </>
   )
 }
 

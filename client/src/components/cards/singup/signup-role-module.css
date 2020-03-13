@@ -21,3 +21,11 @@ img {
 .img-signup{
     width: 620%
 }
+
+.margin{
+   margin: 30px;
+}
+
+.text-err{
+    color: rgb(255, 81, 81);
+}

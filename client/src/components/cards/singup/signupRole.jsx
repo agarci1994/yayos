@@ -2,10 +2,18 @@ import React from "react"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom"
 import "./signup-role-module.css"
 
 const CardRole = props => {
   return (
+    <>
+        <div className="button-back margin">
+          <Button as="div" variant="light" size="sm">
+            <Link to="/main">Volver</Link>
+          </Button>
+        </div>
     <div className="roles">
       <Container>
         <h3>Registrate:</h3>
@@ -45,6 +53,7 @@ const CardRole = props => {
         </Row>
       </Container>
     </div>
+    </>
   )
 }
 

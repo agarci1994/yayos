@@ -67,7 +67,7 @@ class DrugForDay extends Component {
             </Col>
             <Col sm={12}>
               <Tab.Content className="big-box">
-                <Tab.Pane eventKey="morning" className="row d-flex box1">
+                <Tab.Pane eventKey="morning" className="row box1">
                   {this.state.morning.map((elm, idx) => (
                     <Col md={4} className="pils">
                       <div className="title-pils">
@@ -79,7 +79,7 @@ class DrugForDay extends Component {
                     </Col>
                   ))}
                 </Tab.Pane>
-                <Tab.Pane eventKey="afternoom" className="row d-flex box2">
+                <Tab.Pane eventKey="afternoom" className="row box2">
                   {this.state.afternoom.map((elm, idx) => (
                     <Col md={4} className="pils">
                       <div className="title-pils">
@@ -91,7 +91,7 @@ class DrugForDay extends Component {
                     </Col>
                   ))}
                 </Tab.Pane>
-                <Tab.Pane eventKey="night" className="row d-flex box3">
+                <Tab.Pane eventKey="night" className="row box3">
                   {this.state.night.map((elm, idx) => (
                     <Col md={4} className="pils">
                       <div className="title-pils">

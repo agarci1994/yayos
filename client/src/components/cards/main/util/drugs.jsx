@@ -6,7 +6,7 @@ const CardDrugs = props => {
   return (
     <Row>
       {props.info.map((elm, idx) => (
-        <Col key={idx} className="info-drug">
+        <Col md={3} key={idx} className="info-drug">
           <h3>{elm.name}</h3>
           <p>{elm.description}</p>
           <p>Cantidad por caja: {elm.quantity}</p>
