@@ -9,6 +9,17 @@
     box-shadow: 15px 18px 21px -3px rgba(163, 163, 163, 0.34);
 }
 
+.button-little {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    padding: 30% 120px 30% 120px;
+    border-radius: 15%;
+    -webkit-box-shadow: 15px 18px 21px -3px rgba(163, 163, 163, 0.34);
+    -moz-box-shadow: 15px 18px 21px -3px rgba(163, 163, 163, 0.34);
+    box-shadow: 15px 18px 21px -3px rgba(163, 163, 163, 0.34);
+}
+
 .emergency {
     background-color: rgb(248, 132, 132);
     color: rgb(49, 49, 49);

@@ -114,7 +114,7 @@ class Bills extends Component {
             </Col>
             <Col md={12} className="buttonForm">
               <Button
-                className="ml-auto button"
+                className="ml-auto"
                 variant="primary"
                 type="submit"
               >
