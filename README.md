@@ -24,6 +24,7 @@ Yayos ofrece diferentes opciones dependiendo de tu rol:
 Números de emergencia, dietas semanales, lista de tareas, pastillero, eventos culturales, centros de mayores, citas medicas, gestion de facturas, ejercicios fisicos y mentales.
 
 <p align="center"><img src="https://i.ibb.co/r7R2B0P/Screenshot-2020-03-16-at-12-21-46.png" /></p>
+
 #### Sanitario: 
 Diagnosticos, cambio de dietas, recetas médicas.
 
