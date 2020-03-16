@@ -1,7 +1,7 @@
 <p align="center"><img src="https://i.ibb.co/8DpW8hJ/Screenshot-2020-03-16-at-12-18-08.png" /></a></p>
 
 <h2 align="center">
-Single-page application que ofrece recursos para gestionar las necesidades y facilitar el día a día de las personas de la tercera edad.
+Single-page application que ofrece recursos para facilitar y gestionar las necesidades del día a día de las personas de la tercera edad.
 </h2>
 
 ## Sobre el proyecto
