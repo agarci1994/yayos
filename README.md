@@ -14,10 +14,6 @@ Yayos es el tercer proyecto que realice en [Ironhack](https://www.ironhack.com/)
 
 El proyecto se ha realizado con React para el cliente y Node.js para el servidor. Haciendo uso de: Reack Hooks, Style Components, Bootstrap-react, MongoDB, APIs, etc...
 
-<p align="center"><img src="https://i.ibb.co/G9Yz5Y8/Screenshot-2020-03-16-at-12-18-24.png" /></p>
-
-<p align="center"><img src="https://i.ibb.co/r7R2B0P/Screenshot-2020-03-16-at-12-21-46.png" /></p>
-
 ## Mas información
 
 Yayos ofrece diferentes opciones dependiendo de tu rol: 
