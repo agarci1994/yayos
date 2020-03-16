@@ -8,7 +8,7 @@ Single-page application que ofrece recursos para facilitar y gestionar las neces
 
 <p align="center"><img src="https://i.ibb.co/0fGvMHC/Screenshot-2020-03-16-at-12-21-12.png" /></p>
 
-Yayos es el tercer proyecto que realice en [Ironhack](https://www.ironhack.com/) Full Stack Web Dev Bootcam
+Yayos es el tercer proyecto que realicé en [Ironhack](https://www.ironhack.com/) Full Stack Web Dev Bootcamp
 
 ### Construido con 🛠
 
