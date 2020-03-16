@@ -11,7 +11,7 @@ router.post('/new', (req, res, next) => {
             diet: req.body.diet
         }, {new: true})
         .then(response => res.json(response))
-        .catch(err => console.log(err))
+        .catch(err => next(err))
 })
 
 router.get('/main', (req, res, next) => {
@@ -47,7 +47,7 @@ router.get('/main', (req, res, next) => {
 
         })
         .then(response => res.json(response))
-        .catch(err => console.log(err))
+        .catch(err => next(err))
 })
 
 module.exports = router;

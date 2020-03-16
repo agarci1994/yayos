@@ -45,19 +45,8 @@ function chooseMain(props) {
     case "Family":
       return (
         <>
-          <Col xs={10} md={5} lg={5}>
-            <Button
-              red
-              className="buttonred"
-              name="Emergencias"
-              url="/warming"
-            />
-          </Col>
-          <Col xs={10} md={5} lg={5}>
-            <Button purple className="button" name="Cuidadores" url="/" />
-          </Col>
           <Col xs={10} md={5} lg={10}>
-            <Button orange className="button" name="Yayos" url="/yayos" />
+            <Button orange className="button" name={props.loggedInUser.user[0]} url="/yayos" />
           </Col>
         </>
       );

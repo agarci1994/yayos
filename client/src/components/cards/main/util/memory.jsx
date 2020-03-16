@@ -15,7 +15,6 @@ const Text = styled.text`
 `;
 
 const CardMain = props => {
-  console.log(props);
   return (
     <>
           {props.info && props.info.map((elm, idx) => (

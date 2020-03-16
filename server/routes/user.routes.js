@@ -7,7 +7,7 @@ const User = require('../models/User.model')
 router.get('/user', (req, res, next) => {
     User.find()
         .then(response => res.json(response))
-        .catch(err => console.log(err))
+        .catch(err => next(err))
 })
 
 
@@ -20,7 +20,7 @@ router.post("/update", (req, res, next) => {
             new: true
         })
         .then(response => res.json(response))
-        .catch(err => console.log(err))
+        .catch(err => next(err))
 
 })
 
@@ -37,7 +37,7 @@ router.post("/add", (req, res, next) => {
             color: req.body.color
         })
         .then(response => res.json(response))
-        .catch(err => console.log(err))
+        .catch(err => next(err))
 })
 
 

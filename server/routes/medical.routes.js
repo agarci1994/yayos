@@ -9,7 +9,7 @@ router.get('/all', (req, res, next) => {
                         user: req.user._id
                 })
                 .then(response => res.json(response))
-                .catch(err => console.log(err))
+                .catch(err => next(err))
 })
 
 router.post('/new', (req, res, next) => {
@@ -20,7 +20,7 @@ router.post('/new', (req, res, next) => {
                         user: req.user
                 })
                 .then(response => res.json(response))
-                .catch(err => console.log(err))
+                .catch(err => next(err))
 })
 
 

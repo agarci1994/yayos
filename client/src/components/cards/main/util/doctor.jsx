@@ -4,7 +4,6 @@ import Col from "react-bootstrap/Col";
 
 
 const CardDoctor = props => {
-    console.log(props)
     return (
         <Row>
             <Col className="info-doctor">

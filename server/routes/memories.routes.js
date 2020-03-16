@@ -16,19 +16,19 @@ router.post('/list', (req, res, next) => {
             user,
             message: "actualizado"
         }))
-        .catch(err => console.log(err))
+        .catch(err => next(err))
 })
 
 router.get('/find', (req, res, next) => {
     User.findById(req.user._id)
-        .then(user => console.log(user.memory))
-        .catch(err => console.log(err))
+        .then(user => next(user.memory))
+        .catch(err => next(err))
 })
 
 router.get('/delete', (req, res, next) => {
     User.findByIdAndUpdate(req.user._id, {memory: []})
-        .then(user => console.log(user.memory))
-        .catch(err => console.log(err))
+        .then(user => next(user.memory))
+        .catch(err => next(err))
 })
 
 module.exports = router;

@@ -10,13 +10,12 @@ router.get('/all', (req, res, next) => {
             user: req.user._id
         })
         .then(allBills => res.json(allBills))
-        .catch(err => console.log(err))
+        .catch(err => next(err))
 })
 
 router.get('/delete', (req, res, next) => {
     Bills.findOneAndDelete(req._id)
-        .then(x => console.log(x))
-        .catch(err => console.log(err))
+        .catch(err => next(err))
 })
 
 router.post('/new', (req, res, next) => {
@@ -26,7 +25,7 @@ router.post('/new', (req, res, next) => {
             user: req.user
         })
         .then(theBill => res.json(theBill))
-        .catch(err => console.log(err))
+        .catch(err => next(err))
 })
 
 

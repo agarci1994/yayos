@@ -118,9 +118,6 @@ class Doctor extends Component {
         this.state.dayDrug,
         this.state.colorDrug
       )
-      .then(response => console.log(response)
-      )
-      .catch(err => console.log(err));
   }
 
   render() {

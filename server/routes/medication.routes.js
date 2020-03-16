@@ -7,7 +7,7 @@ const Medication = require('../models/Medications.model')
 router.get('/', (req, res, next) => {
     Medication.find({user: req.user._id})
         .then(response => res.json(response))
-        .catch(err => console.log(err))
+        .catch(err => next(err))
 })
 
 router.post('/grandmother', (req, res, next) => {
@@ -15,14 +15,14 @@ router.post('/grandmother', (req, res, next) => {
             user: req.body.id
         })
         .then(response => res.json(response))
-        .catch(err => console.log(err))
+        .catch(err => next(err))
 })
 
 
 router.post('/new', (req, res, next) => {
     Medication.create(req.body)
         .then(theMedication => res.json(theMedication))
-        .catch(err => console.log(err))
+        .catch(err => next(err))
 })
 
 

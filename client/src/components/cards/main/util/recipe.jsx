@@ -5,7 +5,6 @@ import Recipes from '../../diet/recipes'
 
 
 const CardMain = props => {
-    console.log(props.info)
     return (
             <Table responsive="sm">
                 <thead className="tr-orange">

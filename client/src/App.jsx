@@ -43,7 +43,6 @@ class App extends Component {
     this.services = new AuthServices();
   }
 
-  componentDidUpdate = (prevProps, prevState) => console.log("El estado de App se ha actualizado:", this.state);
   componentDidMount = () => this.fetchUser();
 
   setTheUser = userObj =>
