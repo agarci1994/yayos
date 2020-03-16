@@ -19,12 +19,18 @@ El proyecto se ha realizado con React para el cliente y Node.js para el servidor
 Yayos ofrece diferentes opciones dependiendo de tu rol: 
 
 <p align="center"><img src="https://i.ibb.co/G9Yz5Y8/Screenshot-2020-03-16-at-12-18-24.png" /></p>
-Yayo: Números de emergencia, dietas semanales, lista de tareas, pastillero, eventos culturales, centros de mayores, citas medicas, gestion de facturas, ejercicios fisicos y mentales.
+
+# Yayo: 
+Números de emergencia, dietas semanales, lista de tareas, pastillero, eventos culturales, centros de mayores, citas medicas, gestion de facturas, ejercicios fisicos y mentales.
 
 <p align="center"><img src="https://i.ibb.co/r7R2B0P/Screenshot-2020-03-16-at-12-21-46.png" /></p>
-Sanitario: Diagnosticos, cambio de dietas, recetas médicas.
+# Sanitario: 
+Diagnosticos, cambio de dietas, recetas médicas.
 
-Familia: Consulta de toda la información disponible, para estar siempre informado.
+<p align="center"><img src="https://i.ibb.co/RNzxnL5/Screenshot-2020-03-16-at-12-20-56.png" /></p>
+
+# Familia: 
+Consulta de toda la información disponible, para estar siempre informado.
 
 Entra aquí: https://yayos.herokuapp.com/
 
