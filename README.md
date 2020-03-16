@@ -1,53 +1,61 @@
 <p align="center"><img src="https://i.ibb.co/8DpW8hJ/Screenshot-2020-03-16-at-12-18-08.png" /></a></p>
 
 <h2 align="center">
-A small game based on a simple track collecting mechanism. With a climax that combines psychological terror with zombie classics.
+Single-page application que ofrece recursos para gestionar las necesidades y facilitar el día a día de las personas de la tercera edad.
 </h2>
 
-## About The Project
+## Sobre el proyecto
 
 <p align="center"><img src="https://i.ibb.co/0fGvMHC/Screenshot-2020-03-16-at-12-21-12.png" /></p>
 
-The Kind of Trippy is the first proyect I made at [Ironhack](https://www.ironhack.com/) Full Stack Web Dev Bootcamp. After two weeks learning the fundamentals of front end, we had a monday to friday week to develop a game of our choice.
+Yayos es el tercer proyecto que realice en [Ironhack](https://www.ironhack.com/) Full Stack Web Dev Bootcam
 
-### Built With 🛠
+### Construido con 🛠
 
-This project is built upon canvas and working with class the javascript. I also did the stage compositions with Photoshop
+El proyecto se ha realizado con React para el cliente y Node.js para el servidor. Haciendo uso de: Reack Hooks, Style Components, Bootstrap-react, MongoDB, APIs, etc...
 
 <p align="center"><img src="https://i.ibb.co/G9Yz5Y8/Screenshot-2020-03-16-at-12-18-24.png" /></p>
 
 <p align="center"><img src="https://i.ibb.co/r7R2B0P/Screenshot-2020-03-16-at-12-21-46.png" /></p>
 
-## Getting Started ⌨️
+## Mas información
 
-Use the arrows to move around the stage and collect the clues. If you press Space you will use your power, so that zombies do not attack you, but be careful the controls will be randomly reversed.
+Yayos ofrece diferentes opciones dependiendo de tu rol: 
 
-Let's play: https://agarci1994.github.io/proyectGame/
+<p align="center"><img src="https://i.ibb.co/G9Yz5Y8/Screenshot-2020-03-16-at-12-18-24.png" /></p>
+Yayo: Números de emergencia, dietas semanales, lista de tareas, pastillero, eventos culturales, centros de mayores, citas medicas, gestion de facturas, ejercicios fisicos y mentales.
 
-### Installation
+<p align="center"><img src="https://i.ibb.co/r7R2B0P/Screenshot-2020-03-16-at-12-21-46.png" /></p>
+Sanitario: Diagnosticos, cambio de dietas, recetas médicas.
 
-If you wish to look at the project in detail or even work something upon it, feel free to clone the repository:
+Familia: Consulta de toda la información disponible, para estar siempre informado.
+
+Entra aquí: https://yayos.herokuapp.com/
+
+### Instalación
+
+Si desea ver el proyecto en detalle o incluso trabajar en él, no dude en clonar el repositorio:
 
 ```sh
 git clone https://github.com/your_username_/Project-Name.git
 ```
 
-## Contributing 💬
+## Contribución 💬
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Though this is a personal project and contributions you consider making are **greatly appreciated**.
+Las contribuciones son las que hacen que la comunidad de código abierto sea un lugar increíble para aprender, inspirar y crear.
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Bifurca el proyecto
+2. Cree su rama de características (`git checkout -b feature / AmazingFeature`)
+3. Confirme sus cambios (`git commit -m 'Agregue un poco de AmazingFeature' ')
+4. Empuje a la rama (`git push origin feature / AmazingFeature`)
+5. Abra una solicitud de extracción
 
-## Special Thanks 💖
+## Thanks! 💖
 
-To teammates and to the IronHack Team for their support!
+¡A mis compañeros y al equipo IronHack por su apoyo!
 
-## Contact
+## Contacto
 
 Alejandro García - [alejandro.garci.rodr@gmail.com](alejandro.garci.rodr@gmail.com)
 
-Project Link: [https://github.com/agarci1994/proyectGame/
+Project Link: [https://github.com/agarci1994/yayos
