@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+/* ----- Models ----- */
 const Bills = require('../models/Bills.model')
 
 

@@ -1,9 +1,11 @@
 const express = require('express')
 const authRoutes = express.Router()
 
+/* ----- Dependency ----- */
 const passport = require('passport')
 const bcrypt = require('bcryptjs')
 
+/* ----- Models ----- */
 const User = require('../models/User.model')
 
 

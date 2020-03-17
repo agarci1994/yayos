@@ -1,10 +1,13 @@
-.nav-info{
+.nav-info {
     align-content: center;
 }
+
 .nav-tabs {
-    font-size: 4.2em;
+    font-size: 3.8em;
     font-weight: 100;
-    text-transform: uppercase;}
-.nav-tabs a{
-color: rgb(219, 219, 219);
+    text-transform: uppercase;
+}
+
+.nav-tabs a {
+    color: rgb(219, 219, 219);
 }

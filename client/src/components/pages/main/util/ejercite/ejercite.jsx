@@ -1,13 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+/* ----- UI components ----- */
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import MyButton from "../../../../elements/buttom/mainButton";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
+
+/* ----- RRD components ----- */
+import MyButton from "../../../../elements/buttom/mainButton";
+
+/* ----- CSS ----- */
 import "./ejercite.css";
 
-const Ejercite = props => {
+const Ejercite = () => {
   return (
     <Container>
       <div className="button-back">

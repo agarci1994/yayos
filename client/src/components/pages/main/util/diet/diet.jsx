@@ -1,14 +1,22 @@
 import React, {Component} from "react"
-import DietServices from "../../../../../services/dietType.services"
-import CardFood from "../../../../cards/diet/food"
-import Recipes from "../../../../cards/diet/recipes"
+import { Link } from "react-router-dom"
+
+/* ----- UI components ----- */
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Table from "react-bootstrap/Table"
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom"
-import './diet-module.css'
+
+/* ----- Services ----- */
+import DietServices from "../../../../../services/dietType.services"
+
+/* ----- RRD compoennts ----- */
+import CardFood from "../../../../cards/diet/food"
+import Recipes from "../../../../cards/diet/recipes"
+
+/* ----- CSS ----- */
+import './diet.css'
 
 
 const type = [{ type: "Equilibrada", description: "Valores de proteínas, grasas y carbohidratos equilibrados", typeAPI:"balanced"},
@@ -97,7 +105,9 @@ return this.state.diet.length ? (
  </article>
       </Col>
     </Row>
-  </Container>)}}
+  </Container>)
+    }
+  }
 
   export default Diet
 

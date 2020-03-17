@@ -27,8 +27,6 @@ app.use('/api/info', require('./routes/infoGrandmother.routes'))
 app.use('/api/doctor', require('./routes/user.routes'))
 
 
-
-
 app.use((req, res) => {
     res.sendFile(_dirname + "/public/index.html")
 })

@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 
+/* ----- RRD components ----- */
 import CardRole from "../../../cards/singup/signupRole";
 import SignUpInfo from "../../../cards/singup/signupInfo";
+
+/* ----- Services ----- */
 import AuthServices from "../../../../services/auth.services";
-import "./signup-module.css";
+
+/* ----- CSS ----- */
+import "./signup.css";
 
 class Signup extends Component {
   constructor() {

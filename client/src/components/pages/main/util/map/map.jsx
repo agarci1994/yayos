@@ -1,12 +1,21 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom"
+
+/* ----- NPM Maps ----- */
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
+
+/* ----- UI components ----- */
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom"
+
+/* ----- RRD components ----- */
 import CardMap from "../../../../cards/map/cardMap";
 
+/* ----- Services ----- */
 import EventsServices from "../../../../../services/map.services";
+
+/* ----- CSS ----- */
 import "./maps.css";
 
 

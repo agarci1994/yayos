@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 
+/* ----- UI components ----- */
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Modal from 'react-bootstrap/Modal'
 
+/* ----- Services ----- */
 import AuthServices from '../../../../services/auth.services'
-import "./login-module.css"
+
+/* ----- CSS ----- */
+import "./login.css"
 
 class Login extends Component {
 

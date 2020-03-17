@@ -1,13 +1,19 @@
 import React, { Component } from "react";
-import MemoryServices from "../../../../../services/memory.services";
+import { Link } from "react-router-dom"
+
+/* ----- UI components ----- */
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import styled from "styled-components";
-import { Link } from "react-router-dom"
-import "./memory-module.css";
+
+/* ----- Services ----- */
+import MemoryServices from "../../../../../services/memory.services";
+
+/* ----- CSS ----- */
+import "./memory.css";
 
 const Text = styled.text`
   color: rgb(49, 49, 49);

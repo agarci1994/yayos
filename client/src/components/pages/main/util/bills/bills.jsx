@@ -1,14 +1,18 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom"
+
+/* ----- UI components ----- */
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom"
 
-import "./bills.css";
-
+/* ----- Services ----- */
 import BillsServices from "../../../../../services/bills.services";
+
+/* ----- CSS ----- */
+import "./bills.css";
 
 class Bills extends Component {
   constructor(props) {

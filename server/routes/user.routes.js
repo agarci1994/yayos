@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+
+/* ----- Models ----- */
 const Medication = require('../models/Medications.model')
 const User = require('../models/User.model')
 

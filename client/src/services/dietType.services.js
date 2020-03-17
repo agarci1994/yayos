@@ -9,7 +9,7 @@ export default class Services {
         
     }
 
-    dietType = (diet) => {
+    dietType = diet => {
         this.service
             .post("/new", {
                 diet

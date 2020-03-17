@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import "./mainButton-module.css"
+
+/* ----- CSS ----- */
+import "./mainButton.css"
 
 let button = {
     red: "warming",

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+/* ----- Services ----- */
 const centerAPIHandler = require('../services/centerAPIHandler')
 const searchCenter = new centerAPIHandler()
 const culturalAPIHandler = require('../services/culturalAPIHandler')

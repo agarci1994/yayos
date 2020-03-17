@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+
+/* ----- UI components ----- */
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -8,7 +10,7 @@ import Modal from "react-bootstrap/Modal";
 import Overlay from 'react-bootstrap/Overlay'
 import Tooltip from 'react-bootstrap/Tooltip'
 
-
+/* ----- CSS ----- */
 import "./ejerciteMemory.css";
 
 class Memory3 extends Component {

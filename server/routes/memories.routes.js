@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User.model')
 
+/* ----- Models ----- */
+const User = require('../models/User.model')
 
 
 router.post('/list', (req, res, next) => {

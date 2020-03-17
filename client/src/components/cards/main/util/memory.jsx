@@ -14,10 +14,10 @@ const Text = styled.text`
   width: 100%;
 `;
 
-const CardMain = props => {
+const CardMain = ({info}) => {
   return (
     <>
-          {props.info && props.info.map((elm, idx) => (
+          {info && info.map((elm, idx) => (
               <Text key={idx}>
                   {elm.description} | {elm.date} <br />
               </Text>

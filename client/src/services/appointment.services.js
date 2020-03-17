@@ -16,7 +16,7 @@ export default class Services {
         .then(response => response.data)
         .catch(err => console.log(err))
 
-        searchAppointment = (_id) => this.service.get('/all', {
+        searchAppointment = _id => this.service.get('/all', {
                 _id
             })
             .then(response => response.data)

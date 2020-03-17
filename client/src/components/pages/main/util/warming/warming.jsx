@@ -1,15 +1,19 @@
 import React from "react"
+import { Link } from "react-router-dom"
+
+/* ----- UI components ----- */
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+
+/* ----- RRD components ----- */
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom"
 
 
-function chooseMain(props) {
-  switch (props.loggedInUser.role[0]) {
+function chooseMain({loggedInUser, family}) {
+  switch (loggedInUser.role[0]) {
     case "Yayo":
-      return (<a href={`tel:${props.family}`} className="no-underline">
+      return (<a href={`tel:${family}`} className="no-underline">
         <div className={`button family`}>
           <p>Familia</p>
         </div>

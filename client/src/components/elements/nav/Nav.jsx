@@ -6,7 +6,7 @@ import Nav from "react-bootstrap/Nav";
 import AuthServices from "../../../services/auth.services";
 
 import { Link } from "react-router-dom";
-import "./nav-module.css";
+import "./nav.css";
 
 class Navigation extends Component {
   constructor(props) {

@@ -1,7 +1,10 @@
 import React from "react"
+
+/* ----- UI components ----- */
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 
+/* ----- RRD components ----- */
 import Memory1 from '../../../../../cards/ejercite/memory/memory1'
 import Memory2 from '../../../../../cards/ejercite/memory/memory2'
 import Memory3 from '../../../../../cards/ejercite/memory/memory3'

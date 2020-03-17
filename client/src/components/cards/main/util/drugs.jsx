@@ -1,11 +1,13 @@
 import React from "react";
+
+/* ----- UI components ----- */
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const CardDrugs = props => {
+const CardDrugs = ({info}) => {
   return (
     <Row>
-      {props.info.map((elm, idx) => (
+      {info.map((elm, idx) => (
         <Col md={3} key={idx} className="info-drug">
           <h3>{elm.name}</h3>
           <p>{elm.description}</p>

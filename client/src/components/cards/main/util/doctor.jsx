@@ -1,17 +1,19 @@
 import React from "react"
+
+/* ----- UI components ----- */
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 
-const CardDoctor = props => {
+const CardDoctor = ({alergy, sick}) => {
     return (
         <Row>
             <Col className="info-doctor">
                 <h2>Informe médico:</h2>
                 <p>Alergias reconocidas:</p>
-                <p>{props.alergy}</p>
+                <p>{alergy}</p>
                 <p>Enfermedad:</p>
-                <p>{props.sick}</p>
+                <p>{sick}</p>
             </Col>
         </Row>
     )

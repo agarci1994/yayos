@@ -1,14 +1,23 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom"
+
+/* ----- UI components ----- */
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import DrugsServices from "../../../../services/drugs.services";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom"
+
+/* ----- Services ----- */
+import DrugsServices from "../../../../services/drugs.services";
+
+/* ----- RRD components ----- */
 import CardMain from "../../../cards/main/cardMain";
+
+/* ----- CSS ----- */
 import "./main-grandmother.css";
+
 
 import InfoServices from "../../../../services/infoGrandmother.services";
 

@@ -1,10 +1,14 @@
 import React from "react"
+import { Link } from "react-router-dom"
+
+/* ----- UI components ----- */
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom"
-import "./signup-role-module.css"
+
+/* ----- CSS ----- */
+import "./signup-role.css"
 
 const CardRole = props => {
   return (

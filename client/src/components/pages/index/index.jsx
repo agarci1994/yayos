@@ -1,6 +1,7 @@
 import React from "react";
 
-import "./index-module.css";
+/* ----- CSS ----- */
+import "./index.css";
 
 const myIndex = () => {
 

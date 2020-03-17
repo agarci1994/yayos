@@ -13,7 +13,6 @@ import Login from "./components/pages/auth/login/Login"
 
 /* ----- RRD components ----- */
 import Index from "./components/pages/index/index"
-import Profile from "./components/pages/profile/Profile"
 import Main from "./components/pages/main/main"
 import Warming from "./components/pages/main/util/warming/warming"
 import Diet from "./components/pages/main/util/diet/diet"
@@ -27,12 +26,12 @@ import Doctor from "./components/pages/main/util/doctor/doctor"
 import Bills from "./components/pages/main/util/bills/bills"
 import Grandmother from "./components/pages/main/mainGrandmother/mainGrandmother"
 
-
-
-
-
-
+/* ----- CSS ----- */
 import "./App.css";
+
+
+
+
 
 class App extends Component {
   constructor() {
@@ -90,16 +89,6 @@ class App extends Component {
               render={props => (
                 <Login setTheUser={this.setTheUser} {...props} />
               )}
-            />
-            <Route
-              path="/profile"
-              render={() =>
-                this.state.loggedInUser ? (
-                  <Profile loggedInUser={this.state.loggedInUser} />
-                ) : (
-                  <Redirect to="/" />
-                )
-              }
             />
             <Route
               path="/main"
@@ -197,15 +186,6 @@ class App extends Component {
               path="/bills"
               render={() => this.state.loggedInUser ? (
                 <Bills loggedInUser={this.state.loggedInUser} />
-              ) : (
-                  <Redirect to="/" />
-                )
-              }
-            />
-            <Route
-              path="/yayos"
-              render={() => this.state.loggedInUser ? (
-                <Grandmother loggedInUser={this.state.loggedInUser} />
               ) : (
                   <Redirect to="/" />
                 )

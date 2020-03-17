@@ -15,13 +15,13 @@ export default class Services {
         .then(response => response.data)
         .catch(err => console.log(err))
 
-    searchBills = (_id) => this.service.get('/all', {
+    searchBills = _id => this.service.get('/all', {
             _id
         })
         .then(response => response.data)
         .catch(err => console.log(err))
 
-    deleteBills = (_id) => this.service.get('/delete', {
+    deleteBills = _id => this.service.get('/delete', {
             _id
         })
         .then(response => response.data)

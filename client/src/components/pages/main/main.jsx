@@ -1,13 +1,21 @@
 import React from "react";
-import Button from "../../elements/buttom/mainButton";
-import Doctor from "./mainDoctor/mainDoctor";
+
+/* ----- UI components ----- */
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import "./main-module.css";
 
-function chooseMain(props) {
-  switch (props.loggedInUser.role[0]) {
+/* ----- RRD components ----- */
+import Button from "../../elements/buttom/mainButton";
+import Doctor from "./mainDoctor/mainDoctor";
+import Grandmother from "./mainGrandmother/mainGrandmother"
+
+/* ----- CSS ----- */
+import "./main.css";
+
+
+function chooseMain({loggedInUser}) {
+  switch (loggedInUser.role[0]) {
     case "Yayo":
       return (
         <>
@@ -45,9 +53,7 @@ function chooseMain(props) {
     case "Family":
       return (
         <>
-          <Col xs={10} md={5} lg={10}>
-            <Button orange className="button" name={props.loggedInUser.user[0]} url="/yayos" />
-          </Col>
+          <Grandmother loggedInUser={loggedInUser}/>
         </>
       );
     case "Doctor":

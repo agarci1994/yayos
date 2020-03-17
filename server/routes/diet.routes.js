@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
+
+/* ----- Models ----- */
 const User = require('../models/User.model')
+
+/* ----- Services ----- */
 const dietAPIHandler = require('../services/dietAPIHandler')
 const searchDiet = new dietAPIHandler()
 

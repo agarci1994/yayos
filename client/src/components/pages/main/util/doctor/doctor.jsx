@@ -1,13 +1,20 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom"
+
+/* ----- NPM Calendar ----- */
+import Calendar from "react-calendar";
+
+/* ----- UI components ----- */
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import DoctorServices from "../../../../../services/appointment.services";
-import { Link } from "react-router-dom"
 
-import Calendar from "react-calendar";
+/* ----- Services ----- */
+import DoctorServices from "../../../../../services/appointment.services";
+
+/* ----- CSS ----- */
 import "./doctor.css";
 
 class Doctor extends Component {

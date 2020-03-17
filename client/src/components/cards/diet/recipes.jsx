@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+
+/* ----- UI components ----- */
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+
+/* ----- CSS ----- */
 import "./food.css";
 
 const Recipes = props => {
